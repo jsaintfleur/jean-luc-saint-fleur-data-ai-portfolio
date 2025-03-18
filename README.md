@@ -1,8 +1,6 @@
 # Jean-Luc A. Saint-Fleur  
 **Senior Data Analyst | AI & Machine Learning Specialist**  
 📍 New York, NY  
-📧 skjantoine@gmail.com  
-📞 (786) 370-9260  
 🔗 [LinkedIn](https://www.linkedin.com/in/jeanlucsaintfleur) | [GitHub](https://github.com/jsaintfleur)  
 
 ---
