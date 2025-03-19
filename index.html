@@ -12,7 +12,7 @@
 
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
+
     <!-- GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
@@ -23,7 +23,7 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="bg-blue-600 text-white py-4 fixed w-full shadow-lg z-50">
         <div class="container mx-auto flex justify-between items-center px-6">
             <h1 class="text-xl font-bold">Jean-Luc A. Saint-Fleur</h1>
@@ -56,12 +56,14 @@
             <button class="tab-btn active-tab" onclick="showTab('skills')">Skills</button>
             <button class="tab-btn" onclick="showTab('experience')">Experience</button>
             <button class="tab-btn" onclick="showTab('projects')">Projects</button>
+            <button class="tab-btn" onclick="showTab('education')">Education</button>
             <button class="tab-btn" onclick="showTab('contact')">Contact</button>
         </div>
     </section>
 
     <!-- Tab Content Sections -->
     <section class="container mx-auto py-10 px-6">
+        
         <!-- Skills Section -->
         <div id="skills" class="tab-content">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
@@ -73,10 +75,6 @@
                 <div class="skill-card">
                     <img src="images/ml.svg" alt="Machine Learning" class="w-12 h-12">
                     <p class="font-semibold mt-2">Machine Learning & AI</p>
-                </div>
-                <div class="skill-card">
-                    <img src="images/spark.svg" alt="Big Data" class="w-12 h-12">
-                    <p class="font-semibold mt-2">Big Data & Distributed Computing</p>
                 </div>
             </div>
         </div>
@@ -103,11 +101,18 @@
                     <img src="images/project1.jpg" alt="Project 1" class="rounded-md shadow-lg">
                     <p class="text-center mt-2 font-semibold">AI Earnings Call Analyzer</p>
                 </div>
-                <div class="project-card">
-                    <img src="images/project2.jpg" alt="Project 2" class="rounded-md shadow-lg">
-                    <p class="text-center mt-2 font-semibold">HR Attrition Prediction</p>
-                </div>
             </div>
+        </div>
+
+        <!-- Education Section -->
+        <div id="education" class="tab-content hidden">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Education & Certifications</h2>
+            <ul class="list-disc ml-6 mt-4">
+                <li>Artificial Intelligence Engineering Bootcamp, Columbia University (March 2025)</li>
+                <li>Data Analytics Immersive Bootcamp, General Assembly (April 2023)</li>
+                <li>M.S. in Business Administration, Murray Koppelman School of Business (Aug 2018)</li>
+                <li>B.A. in Economics, Murray Koppelman School of Business (May 2017)</li>
+            </ul>
         </div>
 
         <!-- Contact Section -->
@@ -120,23 +125,13 @@
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
+
     </section>
 
     <!-- Footer -->
     <footer class="bg-blue-600 text-white text-center py-6 mt-10">
         <p>© 2024 Jean-Luc A. Saint-Fleur</p>
     </footer>
-
-    <script>
-        function showTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.add('hidden');
-            });
-            document.getElementById(tabId).classList.remove('hidden');
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab'));
-            event.target.classList.add('active-tab');
-        }
-    </script>
 
 </body>
 </html>
