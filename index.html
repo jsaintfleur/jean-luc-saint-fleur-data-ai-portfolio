@@ -13,9 +13,6 @@
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <!-- GSAP for Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
     <!-- Smooth Scrolling -->
     <style>
         html { scroll-behavior: smooth; }
@@ -38,15 +35,15 @@
 
     <!-- Hero Section -->
     <section class="hero-section text-center pt-24 pb-10">
-        <h1 class="text-5xl font-bold text-gray-900">Jean-Luc A. Saint-Fleur</h1>
-        <h2 class="text-2xl font-semibold text-blue-600 mt-2">Senior Data Analyst | AI & Machine Learning Specialist</h2>
-        <p class="text-lg text-gray-600 mt-2">
+        <h1 class="text-5xl font-bold text-gray-900 hover:text-white transition duration-300">Jean-Luc A. Saint-Fleur</h1>
+        <h2 class="text-2xl font-semibold text-blue-600 hover:text-white transition duration-300 mt-2">Senior Data Analyst | AI & Machine Learning Specialist</h2>
+        <p class="text-lg text-gray-600 hover:text-white transition duration-300 mt-2">
             New York, NY | 
-            <a href="mailto:skjantoine@gmail.com" class="text-blue-600">skjantoine@gmail.com</a>
+            <a href="mailto:skjantoine@gmail.com" class="hover:text-gray-300 transition duration-300">skjantoine@gmail.com</a>
         </p>
         <div class="mt-4">
-            <a href="https://linkedin.com/in/jeanlucsaintfleur" class="text-blue-600 mx-2">LinkedIn</a>
-            <a href="https://github.com/jsaintfleur" class="text-blue-600 mx-2">GitHub</a>
+            <a href="https://linkedin.com/in/jeanlucsaintfleur" class="hover:text-gray-300 transition duration-300 mx-2">LinkedIn</a>
+            <a href="https://github.com/jsaintfleur" class="hover:text-gray-300 transition duration-300 mx-2">GitHub</a>
         </div>
     </section>
 
@@ -56,7 +53,6 @@
             <button class="tab-btn active-tab" onclick="showTab('skills')">Skills</button>
             <button class="tab-btn" onclick="showTab('experience')">Experience</button>
             <button class="tab-btn" onclick="showTab('projects')">Projects</button>
-            <button class="tab-btn" onclick="showTab('education')">Education</button>
             <button class="tab-btn" onclick="showTab('contact')">Contact</button>
         </div>
     </section>
@@ -67,14 +63,18 @@
         <!-- Skills Section -->
         <div id="skills" class="tab-content">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                 <div class="skill-card">
-                    <img src="images/python.svg" alt="Python" class="w-12 h-12">
-                    <p class="font-semibold mt-2">Python, SQL, R, Bash</p>
+                    <p class="font-semibold mt-2 hover:text-blue-600 transition duration-300">Python, SQL, R, Bash</p>
                 </div>
                 <div class="skill-card">
-                    <img src="images/ml.svg" alt="Machine Learning" class="w-12 h-12">
-                    <p class="font-semibold mt-2">Machine Learning & AI</p>
+                    <p class="font-semibold mt-2 hover:text-blue-600 transition duration-300">Machine Learning & AI</p>
+                </div>
+                <div class="skill-card">
+                    <p class="font-semibold mt-2 hover:text-blue-600 transition duration-300">Big Data & Distributed Computing</p>
+                </div>
+                <div class="skill-card">
+                    <p class="font-semibold mt-2 hover:text-blue-600 transition duration-300">API Development & Automation</p>
                 </div>
             </div>
         </div>
@@ -84,9 +84,8 @@
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Professional Experience</h2>
             <div class="experience-container">
                 <div class="experience-card">
-                    <img src="images/lisc_logo.png" alt="LISC NYC">
                     <div>
-                        <h3 class="text-xl font-semibold">Senior Community Development Officer | LISC NY</h3>
+                        <h3 class="text-xl font-semibold hover:text-blue-600 transition duration-300">Senior Community Development Officer | LISC NY</h3>
                         <p class="text-gray-600">July 2024 – Present</p>
                     </div>
                 </div>
@@ -96,22 +95,9 @@
         <!-- Projects Section -->
         <div id="projects" class="tab-content hidden">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Projects</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-                <div class="project-card">
-                    <img src="images/project1.jpg" alt="Project 1" class="rounded-md shadow-lg">
-                    <p class="text-center mt-2 font-semibold">AI Earnings Call Analyzer</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Education Section -->
-        <div id="education" class="tab-content hidden">
-            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Education & Certifications</h2>
             <ul class="list-disc ml-6 mt-4">
-                <li>Artificial Intelligence Engineering Bootcamp, Columbia University (March 2025)</li>
-                <li>Data Analytics Immersive Bootcamp, General Assembly (April 2023)</li>
-                <li>M.S. in Business Administration, Murray Koppelman School of Business (Aug 2018)</li>
-                <li>B.A. in Economics, Murray Koppelman School of Business (May 2017)</li>
+                <li class="hover:text-blue-600 transition duration-300">AI Earnings Call Analyzer</li>
+                <li class="hover:text-blue-600 transition duration-300">HR Attrition Prediction</li>
             </ul>
         </div>
 
