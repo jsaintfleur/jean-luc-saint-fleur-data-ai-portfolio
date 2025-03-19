@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
@@ -28,7 +34,25 @@ nav {
     background: linear-gradient(135deg, #2b6cb0, #3182ce);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav a, nav button {
     transition: all 0.3s ease-in-out;
+}
+
+nav button:hover, nav a:hover {
+    transform: scale(1.05);
 }
 
 /* Hero Section */
@@ -75,6 +99,7 @@ nav {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .tab-btn {
@@ -83,6 +108,9 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    flex: 1;
+    text-align: center;
+    min-width: 120px;
 }
 
 .tab-btn:hover, .active-tab {
@@ -211,13 +239,37 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .hero-section {
+        padding: 60px 15px;
+    }
+
     .hero-section h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     .hero-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Adjust layout for mobile screens */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.2rem;
     }
 
     .experience-card {
@@ -225,7 +277,11 @@ footer {
         text-align: center;
     }
 
-    .skill-card {
+    .skill-card, .project-card {
         width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 }
