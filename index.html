@@ -5,29 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jean-Luc A. Saint-Fleur | Senior Data Analyst</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .dark-mode {
-            background-color: #1a202c;
-            color: #f4f4f4;
-        }
+        html { scroll-behavior: smooth; }
+        .dark-mode { background-color: #1a202c; color: #f4f4f4; }
+        .progress-bar { width: 0; transition: width 1.5s ease-in-out; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
+
     <!-- Navigation -->
-    <nav class="bg-blue-600 text-white py-4">
+    <nav class="bg-blue-600 text-white py-4 fixed w-full shadow-lg">
         <div class="container mx-auto flex justify-between items-center px-6">
             <h1 class="text-xl font-bold">Jean-Luc A. Saint-Fleur</h1>
-            <button onclick="toggleDarkMode()" class="bg-gray-800 px-4 py-2 rounded-md">Dark Mode</button>
+            <div>
+                <button onclick="toggleDarkMode()" class="bg-gray-800 px-4 py-2 rounded-md">Dark Mode</button>
+                <a href="resume.pdf" download class="ml-4 px-4 py-2 bg-gray-700 rounded-md">Download Resume</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="text-center py-10">
+    <section class="text-center pt-24 pb-10">
         <h2 class="text-3xl font-semibold">Senior Data Analyst | AI & Machine Learning Specialist</h2>
-        <p class="text-lg text-gray-600">New York, NY | <a href="mailto:skjantoine@gmail.com" class="text-blue-600">skjantoine@gmail.com</a> | (786) 370-9260</p>
+        <p class="text-lg text-gray-600">New York, NY | <a href="mailto:skjantoine@gmail.com" class="text-blue-600">skjantoine@gmail.com</a></p>
         <div class="mt-4">
             <a href="https://linkedin.com/in/jeanlucsaintfleur" class="text-blue-600 mx-2">LinkedIn</a>
             <a href="https://github.com/jsaintfleur" class="text-blue-600 mx-2">GitHub</a>
@@ -47,53 +48,16 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="container mx-auto py-10 px-6">
-        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2">Projects</h2>
-        
-        <!-- AI Projects -->
-        <div class="mt-6">
-            <h3 class="text-xl font-semibold">Artificial Intelligence Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                <div class="bg-white p-4 rounded shadow">
-                    <h4 class="font-bold">Earnings Call Transcript Analyzer</h4>
-                    <p>Built a Retrieval-Augmented Generation (RAG) pipeline for sentiment analysis.</p>
-                    <a href="https://github.com/wrdhall3/group-project-3" class="text-blue-600">View on GitHub</a>
-                </div>
-                <div class="bg-white p-4 rounded shadow">
-                    <h4 class="font-bold">SMS Spam Detector</h4>
-                    <p>Designed an SVC-based spam classifier, deployed via Gradio.</p>
-                    <a href="https://github.com/jsaintfleur/sms_spam_detector" class="text-blue-600">View on GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Data Analytics Projects -->
-        <div class="mt-10">
-            <h3 class="text-xl font-semibold">Data Analytics Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                <div class="bg-white p-4 rounded shadow">
-                    <h4 class="font-bold">NYC Ticket & Collision Analysis</h4>
-                    <p>Analyzed 13M+ records, reducing ticket issuance by 37.5%.</p>
-                </div>
-                <div class="bg-white p-4 rounded shadow">
-                    <h4 class="font-bold">Wind Turbines Market Analysis</h4>
-                    <p>Assessed 90K+ turbine data points, increasing efficiency by 15%.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Experience Section -->
     <section class="container mx-auto py-10 px-6">
         <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2">Professional Experience</h2>
-
+        
         <div class="mt-6">
             <h3 class="text-xl font-semibold">Senior Community Development Officer | LISC NY</h3>
             <p class="text-gray-600">July 2024 – Present</p>
             <ul class="list-disc ml-6 mt-2">
-                <li>Managed $6.98M+ in HUD funding.</li>
-                <li>Developed AI-powered financial models.</li>
+                <li>Managed $6.98M+ in HUD Section 4 & AmeriCorps funding.</li>
+                <li>Developed AI-powered financial models for risk assessment.</li>
             </ul>
         </div>
 
@@ -101,9 +65,27 @@
             <h3 class="text-xl font-semibold">Director of Business Operations | The Doe Fund, Inc.</h3>
             <p class="text-gray-600">Dec 2017 – July 2024</p>
             <ul class="list-disc ml-6 mt-2">
-                <li>Optimized $6M+ in contract management.</li>
+                <li>Optimized $6M+ in annual contract management.</li>
                 <li>Implemented automated financial processes.</li>
             </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="container mx-auto py-10 px-6">
+        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2">Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div class="bg-white p-4 rounded shadow">
+                <h4 class="font-bold">Earnings Call Transcript Analyzer</h4>
+                <p>Developed a RAG pipeline for sentiment analysis.</p>
+                <a href="https://github.com/wrdhall3/group-project-3" class="text-blue-600">View on GitHub</a>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <h4 class="font-bold">SMS Spam Detector</h4>
+                <p>Built a real-time SMS spam classifier with Gradio.</p>
+                <a href="https://github.com/jsaintfleur/sms_spam_detector" class="text-blue-600">View on GitHub</a>
+            </div>
         </div>
     </section>
 
@@ -114,7 +96,6 @@
     </footer>
 
     <script>
-        // Dark Mode Toggle
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
         }
