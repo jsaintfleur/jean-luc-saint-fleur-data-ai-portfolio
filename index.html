@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jean-Luc A. Saint-Fleur | Senior Data Analyst</title>
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,14 +51,17 @@
     <section class="container mx-auto py-10 px-6">
         <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
         <div class="skills-container grid grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-            <div class="bg-white p-4 rounded shadow flex items-center">
-                <img src="icons/python.svg" alt="Python" class="w-8 h-8 mr-2"> Python, SQL, R, Bash
+            <div class="skill-card">
+                <img src="images/python.svg" alt="Python" class="w-10 h-10">
+                <p>Python, SQL, R, Bash</p>
             </div>
-            <div class="bg-white p-4 rounded shadow flex items-center">
-                <img src="icons/tableau.svg" alt="Tableau" class="w-8 h-8 mr-2"> Tableau, Power BI, Matplotlib
+            <div class="skill-card">
+                <img src="images/tableau.svg" alt="Tableau" class="w-10 h-10">
+                <p>Tableau, Power BI, Matplotlib</p>
             </div>
-            <div class="bg-white p-4 rounded shadow flex items-center">
-                <img src="icons/aws.svg" alt="AWS" class="w-8 h-8 mr-2"> AWS, GCP, Azure
+            <div class="skill-card">
+                <img src="images/aws.svg" alt="AWS" class="w-10 h-10">
+                <p>AWS, GCP, Azure</p>
             </div>
         </div>
     </section>
@@ -66,40 +69,42 @@
     <!-- Professional Experience -->
     <section class="container mx-auto py-10 px-6">
         <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2">Professional Experience</h2>
-        
-        <div class="mt-6 flex items-center space-x-4">
-            <img src="images/lisc_logo.png" alt="LISC NYC" class="w-20 h-20 object-contain">
-            <div>
-                <h3 class="text-xl font-semibold">Senior Community Development Officer | LISC NY</h3>
-                <p class="text-gray-600">July 2024 – Present</p>
-                <ul class="list-disc ml-6 mt-2">
-                    <li>Managed $6.98M+ in HUD Section 4 & AmeriCorps funding.</li>
-                    <li>Developed AI-powered financial models for risk assessment.</li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="mt-6 flex items-center space-x-4">
-            <img src="images/tdf_logo.jpg" alt="The Doe Fund" class="w-20 h-20 object-contain">
-            <div>
-                <h3 class="text-xl font-semibold">Director of Business Operations | The Doe Fund, Inc.</h3>
-                <p class="text-gray-600">Dec 2017 – July 2024</p>
-                <ul class="list-disc ml-6 mt-2">
-                    <li>Optimized $6M+ in annual contract management.</li>
-                    <li>Implemented automated financial processes.</li>
-                </ul>
+        <div class="experience-container">
+            <div class="experience-card">
+                <img src="images/lisc_logo.png" alt="LISC NYC">
+                <div>
+                    <h3 class="text-xl font-semibold">Senior Community Development Officer | LISC NY</h3>
+                    <p class="text-gray-600">July 2024 – Present</p>
+                    <ul class="list-disc ml-6 mt-2">
+                        <li>Managed $6.98M+ in HUD Section 4 & AmeriCorps funding.</li>
+                        <li>Developed AI-powered financial models for risk assessment.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <div class="mt-6 flex items-center space-x-4">
-            <img src="images/sp_logo.webp" alt="SP+" class="w-20 h-20 object-contain">
-            <div>
-                <h3 class="text-xl font-semibold">Guest Service Manager | SP+ (New York Marriott Marquis)</h3>
-                <p class="text-gray-600">Mar 2014 – Dec 2017</p>
-                <ul class="list-disc ml-6 mt-2">
-                    <li>Enhanced workforce efficiency by 30% with optimized scheduling.</li>
-                    <li>Reduced payment processing time by 50% with Excel automation.</li>
-                </ul>
+            <div class="experience-card">
+                <img src="images/tdf_logo.jpg" alt="The Doe Fund">
+                <div>
+                    <h3 class="text-xl font-semibold">Director of Business Operations | The Doe Fund, Inc.</h3>
+                    <p class="text-gray-600">Dec 2017 – July 2024</p>
+                    <ul class="list-disc ml-6 mt-2">
+                        <li>Optimized $6M+ in annual contract management.</li>
+                        <li>Implemented automated financial processes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <img src="images/sp_logo.webp" alt="SP+">
+                <div>
+                    <h3 class="text-xl font-semibold">Guest Service Manager | SP+ (New York Marriott Marquis)</h3>
+                    <p class="text-gray-600">Mar 2014 – Dec 2017</p>
+                    <ul class="list-disc ml-6 mt-2">
+                        <li>Enhanced workforce efficiency by 30% with optimized scheduling.</li>
+                        <li>Reduced payment processing time by 50% with Excel automation.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
