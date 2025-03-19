@@ -27,13 +27,19 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
     });
 });
 
-// Dynamic Tab Navigation
+// Dynamic Tab Navigation with GSAP Animations
 function showTab(tabId) {
-    document.querySelectorAll(".tab-content").forEach(tab => {
-        tab.classList.add("hidden");
-    });
+    const activeTab = document.querySelector(".tab-content:not(.hidden)");
+    const newTab = document.getElementById(tabId);
 
-    document.getElementById(tabId).classList.remove("hidden");
+    if (activeTab && activeTab !== newTab) {
+        gsap.to(activeTab, { opacity: 0, y: 20, duration: 0.4, onComplete: () => activeTab.classList.add("hidden") });
+    }
+
+    setTimeout(() => {
+        newTab.classList.remove("hidden");
+        gsap.fromTo(newTab, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 });
+    }, 400);
 
     document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active-tab"));
     event.target.classList.add("active-tab");
