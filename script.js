@@ -1,161 +1,213 @@
-// 🌙 DARK MODE TOGGLE (With Local Storage)
-document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.querySelector(".dark-mode-toggle");
-    const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    if (isDarkMode) {
-        document.body.classList.add("dark-mode");
-        toggleButton.textContent = "Light Mode";
-    }
-
-    toggleButton.addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
-        const mode = document.body.classList.contains("dark-mode") ? "enabled" : "disabled";
-        localStorage.setItem("darkMode", mode);
-        toggleButton.textContent = mode === "enabled" ? "Light Mode" : "Dark Mode";
-    });
-});
-
-// 🔗 SMOOTH SCROLLING NAVIGATION
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    });
-});
-
-// 📊 ANIMATE SKILL PROGRESS BARS ON SCROLL
-const skillBars = document.querySelectorAll(".progress-bar");
-const skillSection = document.querySelector(".skills-container");
-
-function animateSkills() {
-    if (skillSection.getBoundingClientRect().top < window.innerHeight * 0.75) {
-        skillBars.forEach(bar => {
-            let width = bar.getAttribute("data-width");
-            bar.style.width = width + "%";
-        });
-    }
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-window.addEventListener("scroll", animateSkills);
-
-// ✍️ TYPEWRITER EFFECT FOR HERO SECTION
-const typewriterText = document.querySelector(".hero-section h2");
-const textArray = ["Senior Data Analyst", "AI & Machine Learning Specialist", "Data-Driven Innovator"];
-let textIndex = 0;
-let charIndex = 0;
-
-function typeEffect() {
-    if (charIndex < textArray[textIndex].length) {
-        typewriterText.textContent += textArray[textIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(typeEffect, 100);
-    } else {
-        setTimeout(() => {
-            typewriterText.textContent = "";
-            charIndex = 0;
-            textIndex = (textIndex + 1) % textArray.length;
-            typeEffect();
-        }, 2000);
-    }
+/* Dark Mode */
+.dark-mode {
+    background-color: #1a202c;
+    color: #f4f4f4;
 }
 
-typeEffect();
-
-// 🔝 BACK TO TOP BUTTON
-const backToTop = document.createElement("button");
-backToTop.innerText = "⬆ Top";
-backToTop.classList.add("back-to-top");
-document.body.appendChild(backToTop);
-
-window.addEventListener("scroll", function () {
-    if (window.scrollY > 500) {
-        backToTop.classList.add("visible");
-    } else {
-        backToTop.classList.remove("visible");
-    }
-});
-
-backToTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// ✅ DOWNLOAD RESUME CONFIRMATION PROMPT
-const resumeLink = document.querySelector("a[download]");
-resumeLink.addEventListener("click", function (e) {
-    e.preventDefault();
-    const confirmDownload = confirm("Do you want to download Jean-Luc's resume?");
-    if (confirmDownload) {
-        window.location.href = resumeLink.getAttribute("href");
-    }
-});
-
-// 🎭 HOVER EFFECTS FOR EXPERIENCE CARDS
-document.querySelectorAll(".experience-card").forEach(card => {
-    card.addEventListener("mouseover", function () {
-        this.style.transform = "scale(1.05)";
-        this.style.boxShadow = "0px 10px 20px rgba(0,0,0,0.2)";
-    });
-    card.addEventListener("mouseleave", function () {
-        this.style.transform = "scale(1)";
-        this.style.boxShadow = "0px 4px 8px rgba(0,0,0,0.1)";
-    });
-});
-
-// 🎨 LAZY LOAD IMAGES FOR PERFORMANCE
-const lazyImages = document.querySelectorAll("img");
-
-const lazyObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.src = entry.target.dataset.src;
-            lazyObserver.unobserve(entry.target);
-        }
-    });
-});
-
-lazyImages.forEach(image => {
-    lazyObserver.observe(image);
-});
-
-// 🚀 GSAP ANIMATIONS FOR SECTIONS
-gsap.from(".hero-section", { opacity: 0, y: -50, duration: 1 });
-gsap.from(".skills-container", { opacity: 0, x: -50, duration: 1, delay: 0.5 });
-gsap.from(".experience-container", { opacity: 0, x: 50, duration: 1, delay: 0.7 });
-gsap.from(".contact-section", { opacity: 0, scale: 0.8, duration: 1, delay: 1 });
-
-// 🔀 RANDOM QUOTE GENERATOR IN FOOTER
-const quotes = [
-    "Data is the new oil – Clive Humby",
-    "Without data, you're just another person with an opinion – W. Edwards Deming",
-    "In God we trust. All others must bring data – W. Edwards Deming"
-];
-
-document.querySelector("footer p").innerText = quotes[Math.floor(Math.random() * quotes.length)];
-
-// 🏆 INTERACTIVE PROJECT CAROUSEL
-let currentSlide = 0;
-const slides = document.querySelectorAll(".project-card");
-const totalSlides = slides.length;
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.style.display = i === index ? "block" : "none";
-    });
+.dark-mode nav {
+    background-color: #2d3748;
 }
 
-document.querySelector(".next").addEventListener("click", function () {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-});
+.dark-mode a {
+    color: #90cdf4;
+}
 
-document.querySelector(".prev").addEventListener("click", function () {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    showSlide(currentSlide);
-});
+/* Navigation */
+nav {
+    background: linear-gradient(135deg, #2b6cb0, #3182ce);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 14px;
+    transition: all 0.3s ease-in-out;
+}
 
-// Initialize first slide
-showSlide(0);
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #4299e1, #2b6cb0);
+    color: white;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-section h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 10px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Tab Navigation */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab-btn {
+    background: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.tab-btn:hover, .active-tab {
+    background: #3182ce;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content:first-child {
+    display: block;
+}
+
+/* Skills Section */
+.skill-card {
+    background: white;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Experience Section */
+.experience-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.experience-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Projects Section */
+.project-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card img {
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(135deg, #2b6cb0, #4299e1);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact-section a {
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-section a:hover {
+    color: #cbd5e0;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #2c5282;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .experience-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skill-card {
+        width: 100%;
+    }
+}
