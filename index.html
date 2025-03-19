@@ -50,7 +50,8 @@
     <!-- Tab Navigation -->
     <section class="container mx-auto text-center mt-10">
         <div class="tabs flex justify-center space-x-4">
-            <button class="tab-btn active-tab" onclick="showTab('skills')">Skills</button>
+            <button class="tab-btn active-tab" onclick="showTab('about')">About</button>
+            <button class="tab-btn" onclick="showTab('skills')">Skills</button>
             <button class="tab-btn" onclick="showTab('experience')">Experience</button>
             <button class="tab-btn" onclick="showTab('projects')">Projects</button>
             <button class="tab-btn" onclick="showTab('contact')">Contact</button>
@@ -60,44 +61,49 @@
     <!-- Tab Content Sections -->
     <section class="container mx-auto py-10 px-6">
         
+        <!-- About Section -->
+        <div id="about" class="tab-content">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">About Me</h2>
+            <p class="text-lg text-gray-700 mt-4 text-center">
+                I am a Senior Data Analyst with extensive expertise in AI, Machine Learning, and Big Data analytics. 
+                Passionate about extracting insights from complex datasets, I specialize in predictive modeling, NLP, 
+                and scalable data processing solutions.
+            </p>
+        </div>
+
         <!-- Skills Section -->
-        <div id="skills" class="tab-content">
+        <div id="skills" class="tab-content hidden">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                <div class="skill-card">
-                    <p class="font-semibold mt-2 hover:text-blue-600 transition duration-300">Python, SQL, R, Bash</p>
-                </div>
-                <div class="skill-card">
-                    <p class="font-semibold mt-2 hover:text-blue-600 transition duration-300">Machine Learning & AI</p>
-                </div>
-                <div class="skill-card">
-                    <p class="font-semibold mt-2 hover:text-blue-600 transition duration-300">Big Data & Distributed Computing</p>
-                </div>
-                <div class="skill-card">
-                    <p class="font-semibold mt-2 hover:text-blue-600 transition duration-300">API Development & Automation</p>
-                </div>
-            </div>
+            <ul class="list-disc ml-6 mt-4">
+                <li>Programming: Python, SQL, R, Bash</li>
+                <li>Machine Learning: Scikit-Learn, TensorFlow, Keras</li>
+                <li>Data Visualization: Tableau, Power BI, Matplotlib, Seaborn</li>
+                <li>Big Data: Apache Spark, Hadoop, Databricks</li>
+                <li>Databases: PostgreSQL, MySQL, Snowflake</li>
+                <li>Cloud Platforms: AWS, Azure, GCP</li>
+                <li>APIs & Automation: Flask, FastAPI, REST APIs</li>
+            </ul>
         </div>
 
         <!-- Experience Section -->
         <div id="experience" class="tab-content hidden">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Professional Experience</h2>
-            <div class="experience-container">
-                <div class="experience-card">
-                    <div>
-                        <h3 class="text-xl font-semibold hover:text-blue-600 transition duration-300">Senior Community Development Officer | LISC NY</h3>
-                        <p class="text-gray-600">July 2024 – Present</p>
-                    </div>
-                </div>
-            </div>
+            <h3 class="text-xl font-semibold mt-4">Senior Community Development Officer | LISC NY</h3>
+            <p class="text-gray-600">July 2024 – Present</p>
+            <ul class="list-disc ml-6 mt-2">
+                <li>Developed AI-driven financial models for risk assessment.</li>
+                <li>Optimized funding allocation using predictive analytics.</li>
+                <li>Led data analysis for high-impact community projects.</li>
+            </ul>
         </div>
 
         <!-- Projects Section -->
         <div id="projects" class="tab-content hidden">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Projects</h2>
             <ul class="list-disc ml-6 mt-4">
-                <li class="hover:text-blue-600 transition duration-300">AI Earnings Call Analyzer</li>
-                <li class="hover:text-blue-600 transition duration-300">HR Attrition Prediction</li>
+                <li>AI Earnings Call Analyzer (Natural Language Processing, Sentiment Analysis)</li>
+                <li>HR Attrition Prediction (Machine Learning, Classification Models)</li>
+                <li>Big Data Wind Turbine Market Analysis (Apache Spark, Databricks)</li>
             </ul>
         </div>
 
