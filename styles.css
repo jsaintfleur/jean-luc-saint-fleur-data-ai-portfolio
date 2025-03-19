@@ -111,6 +111,7 @@ nav button:hover, nav a:hover {
     flex: 1;
     text-align: center;
     min-width: 120px;
+    font-weight: 600;
 }
 
 .tab-btn:hover, .active-tab {
@@ -123,10 +124,21 @@ nav button:hover, nav a:hover {
 .tab-content {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .tab-content:first-child {
     display: block;
+}
+
+/* About Section */
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
 }
 
 /* Skills Section */
@@ -148,6 +160,7 @@ nav button:hover, nav a:hover {
 
 .skill-card p {
     transition: color 0.3s ease-in-out;
+    font-weight: 600;
 }
 
 .skill-card p:hover {
