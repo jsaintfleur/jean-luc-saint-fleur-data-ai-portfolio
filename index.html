@@ -4,197 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jean-Luc A. Saint-Fleur | Senior Data Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
+        html {
+            scroll-behavior: smooth;
         }
-        /* Container */
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 20px;
-            background: #0073e6;
-            color: white;
-            border-radius: 10px 10px 0 0;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 26px;
-        }
-        .header p {
-            font-size: 18px;
-        }
-        /* Sections */
-        .section {
-            margin: 20px 0;
-            padding: 20px;
-            background: #fff;
-            border-left: 5px solid #0073e6;
-        }
-        .section h2 {
-            color: #0073e6;
-            margin-bottom: 10px;
-        }
-        /* Skills Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #0073e6;
-            color: white;
-        }
-        /* Collapsible Sections */
-        .collapsible {
-            background-color: #0073e6;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 18px;
-            transition: 0.3s;
-        }
-        .active, .collapsible:hover {
-            background-color: #005bb5;
-        }
-        .content {
-            padding: 10px;
-            display: none;
-            overflow: hidden;
-            background-color: #f9f9f9;
-        }
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background: #0073e6;
-            color: white;
-            margin-top: 20px;
-            border-radius: 0 0 10px 10px;
-        }
-        .footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
+        .dark-mode {
+            background-color: #1a202c;
+            color: #f4f4f4;
         }
     </style>
 </head>
-<body>
-
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>Jean-Luc A. Saint-Fleur</h1>
-            <p>Senior Data Analyst | AI & Machine Learning Specialist</p>
-            <p>Email: <a href="mailto:skjantoine@gmail.com" style="color:white;">skjantoine@gmail.com</a> | Phone: (786) 370-9260</p>
-            <p><a href="https://linkedin.com/in/jeanlucsaintfleur" style="color:white;">LinkedIn</a> | <a href="https://github.com/jsaintfleur" style="color:white;">GitHub</a></p>
+<body class="bg-gray-100 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-xl font-bold">Jean-Luc A. Saint-Fleur</h1>
+            <button onclick="toggleDarkMode()" class="bg-gray-800 px-4 py-2 rounded-md">Dark Mode</button>
         </div>
+    </nav>
 
-        <!-- Technical Skills -->
-        <div class="section">
-            <h2>Technical Skills & Technologies</h2>
-            <table>
-                <tr>
-                    <th>Category</th>
-                    <th>Skills</th>
-                </tr>
-                <tr>
-                    <td>Programming Languages</td>
-                    <td>Python, SQL, R, Bash</td>
-                </tr>
-                <tr>
-                    <td>Data Visualization</td>
-                    <td>Tableau, Power BI, Matplotlib, Seaborn, Plotly</td>
-                </tr>
-                <tr>
-                    <td>Machine Learning & AI</td>
-                    <td>TensorFlow, Keras, PyTorch, Scikit-learn</td>
-                </tr>
-            </table>
+    <!-- Hero Section -->
+    <section class="text-center py-10">
+        <h2 class="text-3xl font-semibold">Senior Data Analyst | AI & Machine Learning Specialist</h2>
+        <p class="text-lg text-gray-600">New York, NY | <a href="mailto:skjantoine@gmail.com" class="text-blue-600">skjantoine@gmail.com</a> | (786) 370-9260</p>
+        <div class="mt-4">
+            <a href="https://linkedin.com/in/jeanlucsaintfleur" class="text-blue-600 mx-2">LinkedIn</a>
+            <a href="https://github.com/jsaintfleur" class="text-blue-600 mx-2">GitHub</a>
         </div>
+    </section>
 
-        <!-- Education -->
-        <div class="section">
-            <h2>Education & Certifications</h2>
-            <p><strong>Artificial Intelligence Engineering Bootcamp</strong>, Columbia University (March 2025)</p>
-            <p><strong>Data Analytics Immersive Bootcamp</strong>, General Assembly (April 2023)</p>
-            <p><strong>Brooklyn College | City University of New York</strong></p>
-            <p>Master of Science in Business Administration (August 2018)</p>
-            <p>Bachelor of Arts in Economics (May 2017)</p>
+    <!-- Skills Section -->
+    <section class="container mx-auto py-10 px-6">
+        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2">Technical Skills & Technologies</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+            <div class="bg-white p-4 rounded shadow">Python, SQL, R, Bash</div>
+            <div class="bg-white p-4 rounded shadow">Tableau, Power BI, Matplotlib, Seaborn</div>
+            <div class="bg-white p-4 rounded shadow">AWS, GCP, Azure</div>
+            <div class="bg-white p-4 rounded shadow">TensorFlow, PyTorch, NLP, Transformers</div>
+            <div class="bg-white p-4 rounded shadow">REST APIs, Flask, FastAPI</div>
+            <div class="bg-white p-4 rounded shadow">ETL, Apache Airflow, Data Pipelines</div>
         </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section class="container mx-auto py-10 px-6">
+        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2">Projects</h2>
+        
         <!-- AI Projects -->
-        <button class="collapsible">Artificial Intelligence Projects</button>
-        <div class="content">
-            <p><strong>Earnings Call Transcript Analyzer</strong>: Built a RAG pipeline for sentiment analysis. <a href="https://github.com/wrdhall3/group-project-3">View Project</a></p>
-            <p><strong>SMS Spam Detector</strong>: Developed a spam classification model. <a href="https://github.com/jsaintfleur/sms_spam_detector">View Project</a></p>
+        <div class="mt-6">
+            <h3 class="text-xl font-semibold">Artificial Intelligence Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div class="bg-white p-4 rounded shadow">
+                    <h4 class="font-bold">Earnings Call Transcript Analyzer</h4>
+                    <p>Built a Retrieval-Augmented Generation (RAG) pipeline for sentiment analysis.</p>
+                    <a href="https://github.com/wrdhall3/group-project-3" class="text-blue-600">View on GitHub</a>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h4 class="font-bold">SMS Spam Detector</h4>
+                    <p>Designed an SVC-based spam classifier, deployed via Gradio.</p>
+                    <a href="https://github.com/jsaintfleur/sms_spam_detector" class="text-blue-600">View on GitHub</a>
+                </div>
+            </div>
         </div>
 
         <!-- Data Analytics Projects -->
-        <button class="collapsible">Data Analytics Projects</button>
-        <div class="content">
-            <p><strong>NYC Ticket & Collision Analysis</strong>: Analyzed 13M+ records, reducing ticket issuance by 37.5%.</p>
-            <p><strong>Wind Turbines Market Analysis</strong>: Assessed 90K+ turbine data points.</p>
+        <div class="mt-10">
+            <h3 class="text-xl font-semibold">Data Analytics Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div class="bg-white p-4 rounded shadow">
+                    <h4 class="font-bold">NYC Ticket & Collision Analysis</h4>
+                    <p>Analyzed 13M+ records, reducing ticket issuance by 37.5%.</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h4 class="font-bold">Wind Turbines Market Analysis</h4>
+                    <p>Assessed 90K+ turbine data points, increasing efficiency by 15%.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Professional Experience -->
-        <button class="collapsible">Professional Experience</button>
-        <div class="content">
-            <p><strong>Local Initiatives Support Corporation (LISC NY)</strong> – Senior Community Development Officer (July 2024 – Present)</p>
-            <ul>
+    <!-- Experience Section -->
+    <section class="container mx-auto py-10 px-6">
+        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2">Professional Experience</h2>
+
+        <div class="mt-6">
+            <h3 class="text-xl font-semibold">Senior Community Development Officer | LISC NY</h3>
+            <p class="text-gray-600">July 2024 – Present</p>
+            <ul class="list-disc ml-6 mt-2">
                 <li>Managed $6.98M+ in HUD funding.</li>
                 <li>Developed AI-powered financial models.</li>
             </ul>
+        </div>
 
-            <p><strong>The Doe Fund, Inc.</strong> – Director of Business Operations (Dec 2017 – July 2024)</p>
-            <ul>
+        <div class="mt-6">
+            <h3 class="text-xl font-semibold">Director of Business Operations | The Doe Fund, Inc.</h3>
+            <p class="text-gray-600">Dec 2017 – July 2024</p>
+            <ul class="list-disc ml-6 mt-2">
                 <li>Optimized $6M+ in contract management.</li>
                 <li>Implemented automated financial processes.</li>
             </ul>
         </div>
+    </section>
 
-        <!-- Footer -->
-        <div class="footer">
-            <p>© 2024 Jean-Luc A. Saint-Fleur | <a href="mailto:skjantoine@gmail.com">Contact Me</a></p>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white text-center py-6 mt-10">
+        <p>© 2024 Jean-Luc A. Saint-Fleur</p>
+        <p><a href="mailto:skjantoine@gmail.com" class="text-white">Contact Me</a></p>
+    </footer>
 
-    <!-- JavaScript for Collapsible Sections -->
     <script>
-        var coll = document.getElementsByClassName("collapsible");
-        for (var i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                content.style.display = content.style.display === "block" ? "none" : "block";
-            });
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
         }
     </script>
 
