@@ -44,14 +44,30 @@ nav {
 .hero-section h1 {
     font-size: 3.5rem;
     font-weight: bold;
-    animation: fadeInDown 1s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+.hero-section h1:hover {
+    color: #ffffff;
 }
 
 .hero-section h2 {
     font-size: 2rem;
     font-weight: 500;
     margin-top: 10px;
-    animation: fadeInUp 1s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+.hero-section h2:hover {
+    color: #ffffff;
+}
+
+.hero-section a {
+    transition: color 0.3s ease-in-out;
+}
+
+.hero-section a:hover {
+    color: #ffffff;
 }
 
 /* Tab Navigation */
@@ -102,6 +118,14 @@ nav {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+.skill-card p {
+    transition: color 0.3s ease-in-out;
+}
+
+.skill-card p:hover {
+    color: #3182ce;
+}
+
 /* Experience Section */
 .experience-card {
     background: white;
@@ -112,15 +136,16 @@ nav {
     transition: transform 0.3s ease-in-out;
 }
 
-.experience-card img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
 .experience-card:hover {
     transform: translateY(-5px);
+}
+
+.experience-card h3 {
+    transition: color 0.3s ease-in-out;
+}
+
+.experience-card h3:hover {
+    color: #3182ce;
 }
 
 /* Projects Section */
@@ -132,13 +157,16 @@ nav {
     transition: transform 0.3s ease-in-out;
 }
 
-.project-card img {
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
+.project-card:hover {
+    transform: scale(1.05);
 }
 
-.project-card:hover img {
-    transform: scale(1.1);
+.project-card li {
+    transition: color 0.3s ease-in-out;
+}
+
+.project-card li:hover {
+    color: #3182ce;
 }
 
 /* Contact Section */
@@ -179,16 +207,6 @@ footer {
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
