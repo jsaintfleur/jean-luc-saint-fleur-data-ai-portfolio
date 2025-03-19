@@ -13,6 +13,9 @@
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
     <!-- Smooth Scrolling -->
     <style>
         html { scroll-behavior: smooth; }
@@ -21,7 +24,7 @@
 <body class="bg-gray-100 text-gray-900">
 
     <!-- Navigation -->
-    <nav class="bg-blue-600 text-white py-4 fixed w-full shadow-lg">
+    <nav class="bg-blue-600 text-white py-4 fixed w-full shadow-lg z-50">
         <div class="container mx-auto flex justify-between items-center px-6">
             <h1 class="text-xl font-bold">Jean-Luc A. Saint-Fleur</h1>
             <div>
@@ -47,80 +50,93 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="container mx-auto py-10 px-6">
-        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
-        <div class="skills-container grid grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-            <div class="skill-card">
-                <img src="images/python.svg" alt="Python" class="w-10 h-10">
-                <p>Python, SQL, R, Bash</p>
-            </div>
-            <div class="skill-card">
-                <img src="images/tableau.svg" alt="Tableau" class="w-10 h-10">
-                <p>Tableau, Power BI, Matplotlib</p>
-            </div>
-            <div class="skill-card">
-                <img src="images/aws.svg" alt="AWS" class="w-10 h-10">
-                <p>AWS, GCP, Azure</p>
-            </div>
+    <!-- Tab Navigation -->
+    <section class="container mx-auto text-center mt-10">
+        <div class="tabs flex justify-center space-x-4">
+            <button class="tab-btn active-tab" onclick="showTab('skills')">Skills</button>
+            <button class="tab-btn" onclick="showTab('experience')">Experience</button>
+            <button class="tab-btn" onclick="showTab('projects')">Projects</button>
+            <button class="tab-btn" onclick="showTab('contact')">Contact</button>
         </div>
     </section>
 
-    <!-- Professional Experience -->
+    <!-- Tab Content Sections -->
     <section class="container mx-auto py-10 px-6">
-        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2">Professional Experience</h2>
-
-        <div class="experience-container">
-            <div class="experience-card">
-                <img src="images/lisc_logo.png" alt="LISC NYC">
-                <div>
-                    <h3 class="text-xl font-semibold">Senior Community Development Officer | LISC NY</h3>
-                    <p class="text-gray-600">July 2024 – Present</p>
-                    <ul class="list-disc ml-6 mt-2">
-                        <li>Managed $6.98M+ in HUD Section 4 & AmeriCorps funding.</li>
-                        <li>Developed AI-powered financial models for risk assessment.</li>
-                    </ul>
+        <!-- Skills Section -->
+        <div id="skills" class="tab-content">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+                <div class="skill-card">
+                    <img src="images/python.svg" alt="Python" class="w-12 h-12">
+                    <p class="font-semibold mt-2">Python, SQL, R, Bash</p>
                 </div>
-            </div>
-
-            <div class="experience-card">
-                <img src="images/tdf_logo.jpg" alt="The Doe Fund">
-                <div>
-                    <h3 class="text-xl font-semibold">Director of Business Operations | The Doe Fund, Inc.</h3>
-                    <p class="text-gray-600">Dec 2017 – July 2024</p>
-                    <ul class="list-disc ml-6 mt-2">
-                        <li>Optimized $6M+ in annual contract management.</li>
-                        <li>Implemented automated financial processes.</li>
-                    </ul>
+                <div class="skill-card">
+                    <img src="images/ml.svg" alt="Machine Learning" class="w-12 h-12">
+                    <p class="font-semibold mt-2">Machine Learning & AI</p>
                 </div>
-            </div>
-
-            <div class="experience-card">
-                <img src="images/sp_logo.webp" alt="SP+">
-                <div>
-                    <h3 class="text-xl font-semibold">Guest Service Manager | SP+ (New York Marriott Marquis)</h3>
-                    <p class="text-gray-600">Mar 2014 – Dec 2017</p>
-                    <ul class="list-disc ml-6 mt-2">
-                        <li>Enhanced workforce efficiency by 30% with optimized scheduling.</li>
-                        <li>Reduced payment processing time by 50% with Excel automation.</li>
-                    </ul>
+                <div class="skill-card">
+                    <img src="images/spark.svg" alt="Big Data" class="w-12 h-12">
+                    <p class="font-semibold mt-2">Big Data & Distributed Computing</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="container mx-auto py-10 px-6 text-center">
-        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2">Contact Me</h2>
-        <p class="text-lg text-gray-700 mt-4">Email: <a href="mailto:skjantoine@gmail.com" class="text-blue-600">skjantoine@gmail.com</a></p>
-        <p class="text-lg text-gray-700 mt-2">Phone: <span class="text-gray-800">(786) 370-9260</span></p>
+        <!-- Experience Section -->
+        <div id="experience" class="tab-content hidden">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Professional Experience</h2>
+            <div class="experience-container">
+                <div class="experience-card">
+                    <img src="images/lisc_logo.png" alt="LISC NYC">
+                    <div>
+                        <h3 class="text-xl font-semibold">Senior Community Development Officer | LISC NY</h3>
+                        <p class="text-gray-600">July 2024 – Present</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects" class="tab-content hidden">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Projects</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+                <div class="project-card">
+                    <img src="images/project1.jpg" alt="Project 1" class="rounded-md shadow-lg">
+                    <p class="text-center mt-2 font-semibold">AI Earnings Call Analyzer</p>
+                </div>
+                <div class="project-card">
+                    <img src="images/project2.jpg" alt="Project 2" class="rounded-md shadow-lg">
+                    <p class="text-center mt-2 font-semibold">HR Attrition Prediction</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="tab-content hidden">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Contact Me</h2>
+            <form class="mt-6">
+                <input type="text" placeholder="Your Name" class="input-field">
+                <input type="email" placeholder="Your Email" class="input-field">
+                <textarea placeholder="Your Message" class="input-field"></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-blue-600 text-white text-center py-6 mt-10">
         <p>© 2024 Jean-Luc A. Saint-Fleur</p>
-        <p><a href="mailto:skjantoine@gmail.com" class="text-white">Contact Me</a></p>
     </footer>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            document.getElementById(tabId).classList.remove('hidden');
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab'));
+            event.target.classList.add('active-tab');
+        }
+    </script>
 
 </body>
 </html>
