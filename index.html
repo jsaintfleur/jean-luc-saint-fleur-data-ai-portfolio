@@ -13,7 +13,6 @@
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <!-- Smooth Scrolling & Tab Animation -->
     <style>
         html { scroll-behavior: smooth; }
         .tab-content { display: none; }
@@ -22,12 +21,11 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-    <!-- ============================
-         NAVIGATION BAR
-    ============================ -->
+    <!-- Navigation Bar -->
     <nav class="bg-blue-600 text-white py-4 fixed w-full shadow-lg z-50">
         <div class="container mx-auto flex justify-between items-center px-6">
-            <h1 class="text-xl font-bold">Jean-Luc A. Saint-Fleur</h1>
+            <h1 class="text-5xl font-bold hover:text-gray-300 transition duration-300">
+    AI & Data Analytics Portfolio</h1>
             <div>
                 <button id="dark-mode-toggle" class="dark-mode-toggle bg-gray-800 px-4 py-2 rounded-md">
                     Dark Mode
@@ -40,9 +38,7 @@
         </div>
     </nav>
 
-    <!-- ============================
-         HERO SECTION
-    ============================ -->
+    <!-- Hero Section -->
     <section class="hero-section text-center pt-24 pb-10 bg-gradient-to-b from-blue-600 to-blue-800 text-white">
         <h1 class="text-5xl font-bold hover:text-gray-300 transition duration-300">Jean-Luc A. Saint-Fleur</h1>
         <h2 class="text-2xl font-semibold hover:text-gray-300 transition duration-300 mt-2">
@@ -66,32 +62,31 @@
         </div>
     </section>
 
-    <!-- ============================
-         TAB NAVIGATION
-    ============================ -->
+    <!-- Tab Navigation -->
     <section class="container mx-auto text-center mt-10">
         <div class="tabs flex justify-center space-x-4">
             <button class="tab-btn active-tab" data-tab="about">About</button>
             <button class="tab-btn" data-tab="skills">Skills</button>
             <button class="tab-btn" data-tab="experience">Experience</button>
             <button class="tab-btn" data-tab="projects">Projects</button>
-            <button class="tab-btn" data-tab="contact">Contact</button>
+            <button class="tab-btn" data-tab="education">Education</button>
         </div>
     </section>
 
-    <!-- ============================
-         TAB CONTENT SECTIONS
-    ============================ -->
+    <!-- Tab Content Sections -->
     <section class="container mx-auto py-10 px-6">
-
+        
         <!-- About Section -->
         <div id="about" class="tab-content" style="display: block;">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">About Me</h2>
             <p class="text-lg text-gray-700 mt-4 text-center">
-                Hi, I’m <strong>Jean-Luc A. Saint-Fleur</strong>—a data-driven problem solver, business strategist, and advocate for diversity in technology.
+                I specialize in leveraging <strong>AI, machine learning, and data analytics</strong> to drive efficiency, optimize financial strategies, 
+                and uncover meaningful insights. My journey has taken me across industries, from <strong>hospitality</strong> to the <strong>nonprofit sector</strong>, 
+                where I help organizations make <strong>data-driven decisions that create real impact</strong>.
             </p>
             <p class="text-lg text-gray-700 mt-4 text-center">
-                My journey spans across industries, from <strong>hospitality</strong> to the <strong>nonprofit sector</strong>, where I leverage <strong>AI, machine learning, and data analytics</strong> to drive efficiency, optimize financial strategies, and uncover meaningful insights.
+                I am fluent in <strong>Haitian Creole, French, and English</strong>, and currently learning <strong>Spanish</strong>. Just as I challenge myself to learn new languages, 
+                I approach programming with the same enthusiasm—constantly expanding my skills in <strong>Python, SQL, JavaScript, and AI-driven technologies</strong>.
             </p>
         </div>
 
@@ -99,44 +94,50 @@
         <div id="skills" class="tab-content">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
             <ul class="list-disc ml-6 mt-4">
-                <li>Programming: Python, JavaScript, SQL, R, Bash</li>
-                <li>Data Visualization: Tableau, Power BI, Matplotlib, Seaborn, Plotly</li>
-                <li>Machine Learning: TensorFlow, Keras, PyTorch, Scikit-Learn</li>
-                <li>Big Data & Cloud: AWS, GCP, Apache Spark, Databricks</li>
+                <li><strong>Programming:</strong> Python, JavaScript, SQL, R, Bash</li>
+                <li><strong>Data Visualization:</strong> Tableau, Power BI, Matplotlib, Seaborn, Plotly</li>
+                <li><strong>Machine Learning & AI:</strong> TensorFlow, Keras, PyTorch, Scikit-Learn</li>
+                <li><strong>Big Data & Cloud:</strong> AWS, GCP, Apache Spark, Databricks</li>
             </ul>
         </div>
 
         <!-- Experience Section -->
         <div id="experience" class="tab-content">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Professional Experience</h2>
-            <h3 class="text-xl font-semibold mt-4">Senior Community Development Officer | LISC NY</h3>
-            <ul class="list-disc ml-6 mt-2">
-                <li>Managed multimillion-dollar funding, ensuring compliance and strategic impact.</li>
-                <li>Developed AI-driven models for financial forecasting and risk assessment.</li>
+            <p class="text-lg text-gray-700 mt-4 text-center">
+                <strong>Senior Community Development Officer | Data & Financial Analyst</strong><br>
+                <em>Local Initiatives Support Corporation (LISC NY)</em>
+            </p>
+            <ul class="list-disc ml-6 mt-4">
+                <li>Managed multimillion-dollar HUD Section 4 and AmeriCorps funding</li>
+                <li>Developed predictive analytics models for grant allocation and investment impact</li>
+                <li>Automated financial tracking systems, reducing reconciliation time by 50%</li>
             </ul>
         </div>
 
-        <!-- Contact Section -->
-        <div id="contact" class="tab-content">
-            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Get in Touch</h2>
-            <form class="contact-form mt-6 max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
-                <label for="contact-name">Full Name</label>
-                <input type="text" id="contact-name" placeholder="Your Name" class="input-field w-full">
-                <label for="contact-email">Email Address</label>
-                <input type="email" id="contact-email" placeholder="Your Email" class="input-field w-full">
-                <label for="contact-message">Message</label>
-                <textarea id="contact-message" placeholder="Your Message" class="input-field w-full h-32"></textarea>
-                <button type="submit" class="submit-btn w-full mt-4 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300">
-                    Send Message
-                </button>
-            </form>
+        <!-- Projects Section -->
+        <div id="projects" class="tab-content">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Projects</h2>
+            <ul class="list-disc ml-6 mt-4">
+                <li><strong>Earnings Call Transcript Analyzer:</strong> Built a Retrieval-Augmented Generation (RAG) pipeline to analyze financial sentiment.</li>
+                <li><strong>SMS Spam Detector:</strong> Developed an SVM model for real-time spam classification.</li>
+                <li><strong>HR Attrition & Department Fit Prediction:</strong> Designed a branched neural network to optimize employee placement.</li>
+            </ul>
+        </div>
+
+        <!-- Education Section -->
+        <div id="education" class="tab-content">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Education</h2>
+            <ul class="list-disc ml-6 mt-4">
+                <li><strong>Artificial Intelligence Engineering Bootcamp</strong> – Columbia University</li>
+                <li><strong>Data Analytics Immersive Bootcamp</strong> – General Assembly</li>
+                <li><strong>Master of Science in Business Administration</strong> – Brooklyn College</li>
+                <li><strong>Bachelor of Arts in Economics</strong> – Brooklyn College</li>
+            </ul>
         </div>
 
     </section>
 
-    <!-- ============================
-         FOOTER
-    ============================ -->
     <footer class="bg-blue-600 text-white text-center py-6 mt-10">
         <p>© 2024 Jean-Luc A. Saint-Fleur</p>
     </footer>
