@@ -88,9 +88,10 @@
         <div id="about" class="tab-content">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">About Me</h2>
             <p class="text-lg text-gray-700 mt-4 text-center">
-                I am a Senior Data Analyst with expertise in AI, Machine Learning, and Big Data analytics. 
-                Passionate about diversity in tech, I actively support Haitian developers and professionals. 
-                Outside of data, I played <strong>tennis</strong> and <strong>soccer</strong> competitively and love <strong>basketball</strong>.
+                Hi, I’m <strong>Jean-Luc A. Saint-Fleur</strong>—a data-driven problem solver, business strategist, and advocate for diversity in technology.  
+            </p>
+            <p class="text-lg text-gray-700 mt-4 text-center">
+                My journey has taken me across industries—from **hospitality** to the **nonprofit world**, where I’ve spent the last **eight years** helping organizations make **data-driven decisions that create real impact**.
             </p>
         </div>
 
@@ -98,24 +99,25 @@
         <div id="skills" class="tab-content">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
             <ul class="list-disc ml-6 mt-4">
-                <li>Programming: Python, Javascript, SQL, R, Bash</li>
-                <li>Machine Learning: Scikit-Learn, TensorFlow, Keras</li>
-                <li>Data Visualization: Tableau, Power BI, Matplotlib, Seaborn</li>
-                <li>Big Data: Apache Spark, Hadoop, Databricks</li>
-                <li>Databases: PostgreSQL, MySQL, Snowflake</li>
-                <li>Cloud Platforms: AWS, Azure, GCP</li>
-                <li>APIs & Automation: Flask, FastAPI, REST APIs</li>
+                <li>Programming: Python, JavaScript, SQL, R, Bash</li>
+                <li>Machine Learning: TensorFlow, Keras, PyTorch, Scikit-Learn</li>
+                <li>Big Data & Cloud: Apache Spark, Hadoop, AWS, GCP</li>
             </ul>
         </div>
 
         <!-- Contact Section -->
         <div id="contact" class="tab-content">
-            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Contact Me</h2>
-            <form class="contact-form mt-6">
-                <input type="text" id="contact-name" placeholder="Your Name" class="input-field">
-                <input type="email" id="contact-email" placeholder="Your Email" class="input-field">
-                <textarea id="contact-message" placeholder="Your Message" class="input-field"></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Get in Touch</h2>
+            <form class="contact-form mt-6 max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+                <label for="contact-name">Full Name</label>
+                <input type="text" id="contact-name" placeholder="Your Name" class="input-field w-full">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" placeholder="Your Email" class="input-field w-full">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" placeholder="Your Message" class="input-field w-full h-32"></textarea>
+                <button type="submit" class="submit-btn w-full mt-4 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300">
+                    Send Message
+                </button>
             </form>
         </div>
 
@@ -128,33 +130,7 @@
         <p>© 2024 Jean-Luc A. Saint-Fleur</p>
     </footer>
 
-    <!-- ============================
-         JAVASCRIPT: TAB SWITCHING & DARK MODE
-    ============================ -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Tab Navigation Logic
-            function showTab(tabId) {
-                document.querySelectorAll('.tab-content').forEach(tab => {
-                    tab.style.display = tab.id === tabId ? "block" : "none";
-                });
-
-                document.querySelectorAll('.tab-btn').forEach(button => {
-                    button.classList.remove("active-tab");
-                });
-
-                document.querySelector(`[data-tab="${tabId}"]`).classList.add("active-tab");
-            }
-
-            document.querySelectorAll(".tab-btn").forEach(button => {
-                button.addEventListener("click", function () {
-                    showTab(this.dataset.tab);
-                });
-            });
-
-            showTab("about"); // Default active tab
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
