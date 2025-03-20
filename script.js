@@ -2,128 +2,166 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================
        DARK MODE TOGGLE
     ===================== */
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
-    if (darkModeToggle) {
+    const toggleButton = document.querySelector("#dark-mode-toggle");
+
+    if (toggleButton) {
+        // Check localStorage for dark mode setting
         const isDarkMode = localStorage.getItem("darkMode") === "enabled";
 
         if (isDarkMode) {
             document.body.classList.add("dark-mode");
-            darkModeToggle.textContent = "Light Mode";
+            toggleButton.textContent = "Light Mode";
         }
 
-        darkModeToggle.addEventListener("click", function () {
+        // Toggle dark mode and store preference
+        toggleButton.addEventListener("click", function () {
             document.body.classList.toggle("dark-mode");
             const mode = document.body.classList.contains("dark-mode") ? "enabled" : "disabled";
             localStorage.setItem("darkMode", mode);
-            darkModeToggle.textContent = mode === "enabled" ? "Light Mode" : "Dark Mode";
+            toggleButton.textContent = mode === "enabled" ? "Light Mode" : "Dark Mode";
         });
     }
 
     /* =====================
-       TAB NAVIGATION
+       TAB NAVIGATION FUNCTION
     ===================== */
     function showTab(tabId) {
-        document.querySelectorAll(".tab-content").forEach(tab => {
-            tab.classList.add("hidden");
-        });
+        const activeTab = document.querySelector(".tab-content:not(.hidden)");
+        const newTab = document.getElementById(tabId);
 
-        const activeTab = document.getElementById(tabId);
+        if (!newTab || (activeTab && activeTab === newTab)) return;
+
+        // Hide current tab smoothly
         if (activeTab) {
-            activeTab.classList.remove("hidden");
+            activeTab.classList.add("opacity-0");
+            setTimeout(() => activeTab.classList.add("hidden"), 300);
         }
 
-        document.querySelectorAll(".tab-btn").forEach(btn => {
-            btn.classList.remove("active-tab");
-            btn.setAttribute("aria-selected", "false");
-        });
+        // Show new tab with animation
+        setTimeout(() => {
+            newTab.classList.remove("hidden", "opacity-0");
+            newTab.classList.add("opacity-100");
+        }, 300);
 
-        const selectedButton = document.querySelector(`[data-tab="${tabId}"]`);
-        if (selectedButton) {
-            selectedButton.classList.add("active-tab");
-            selectedButton.setAttribute("aria-selected", "true");
-        }
+        // Update active tab button styling
+        document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active-tab"));
+        document.querySelector(`[data-tab="${tabId}"]`).classList.add("active-tab");
     }
 
+    // Attach event listeners to all tab buttons
     document.querySelectorAll(".tab-btn").forEach(button => {
         button.addEventListener("click", function () {
             showTab(this.dataset.tab);
         });
+    });
 
-        button.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") {
-                showTab(this.dataset.tab);
-            }
+    // Set default tab on page load
+    showTab("about");
+
+    /* =====================
+       SMOOTH SCROLLING FOR INTERNAL LINKS
+    ===================== */
+    document.querySelectorAll("a[href^='#']").forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetElement = document.querySelector(this.getAttribute("href"));
+            if (!targetElement) return;
+
+            const navHeight = document.querySelector("nav").offsetHeight;
+            const targetPosition = targetElement.offsetTop - navHeight - 10;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
         });
     });
 
-    showTab("about"); // Default active tab
+    /* =====================
+       BACK TO TOP BUTTON
+    ===================== */
+    const backToTop = document.createElement("button");
+    backToTop.innerText = "⬆ Top";
+    backToTop.classList.add("back-to-top", "hidden");
+    document.body.appendChild(backToTop);
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 500) {
+            backToTop.classList.remove("hidden");
+            backToTop.classList.add("visible");
+        } else {
+            backToTop.classList.remove("visible");
+            setTimeout(() => backToTop.classList.add("hidden"), 300);
+        }
+    });
+
+    backToTop.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
     /* =====================
-       FORM VALIDATION
+       FORM VALIDATION & SUBMISSION
     ===================== */
-    const contactForm = document.getElementById("contact-form");
+    const contactForm = document.querySelector("#contact-form");
 
     if (contactForm) {
         contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            const name = document.getElementById("contact-name").value.trim();
-            const email = document.getElementById("contact-email").value.trim();
-            const subject = document.getElementById("contact-subject").value.trim();
-            const message = document.getElementById("contact-message").value.trim();
-            const successMessage = document.getElementById("form-success-message");
+            // Fetch input fields
+            let name = document.querySelector("#contact-name")?.value.trim() || "";
+            let email = document.querySelector("#contact-email")?.value.trim() || "";
+            let message = document.querySelector("#contact-message")?.value.trim() || "";
+            let successMessage = document.querySelector("#form-success-message");
 
-            const nameError = document.getElementById("name-error");
-            const emailError = document.getElementById("email-error");
-            const messageError = document.getElementById("message-error");
-
+            // Basic field validation
             let isValid = true;
 
-            nameError.classList.add("hidden");
-            emailError.classList.add("hidden");
-            messageError.classList.add("hidden");
-
-            if (name === "") {
-                nameError.classList.remove("hidden");
+            if (!name) {
+                document.querySelector("#name-error").classList.remove("hidden");
                 isValid = false;
+            } else {
+                document.querySelector("#name-error").classList.add("hidden");
             }
 
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                emailError.classList.remove("hidden");
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                document.querySelector("#email-error").classList.remove("hidden");
                 isValid = false;
+            } else {
+                document.querySelector("#email-error").classList.add("hidden");
             }
 
-            if (message === "") {
-                messageError.classList.remove("hidden");
+            if (!message) {
+                document.querySelector("#message-error").classList.remove("hidden");
                 isValid = false;
+            } else {
+                document.querySelector("#message-error").classList.add("hidden");
             }
 
+            // Successful form submission
             if (isValid) {
                 successMessage.classList.remove("hidden");
-                setTimeout(() => {
-                    successMessage.classList.add("hidden");
-                }, 4000);
                 contactForm.reset();
+                setTimeout(() => successMessage.classList.add("hidden"), 5000);
             }
         });
     }
 
     /* =====================
-       SMOOTH SCROLLING
+       RESPONSIVE DESIGN ADJUSTMENTS
     ===================== */
-    document.querySelectorAll("a[href^='#']").forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetElement = document.querySelector(this.getAttribute("href"));
-            if (targetElement) {
-                const navHeight = document.querySelector("nav").offsetHeight;
-                const targetPosition = targetElement.offsetTop - navHeight - 10;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
+    function adjustTabsForScreenSize() {
+        const isMobile = window.innerWidth < 768;
+        document.querySelectorAll(".tab-btn").forEach(button => {
+            if (isMobile) {
+                button.classList.add("w-full", "py-3");
+            } else {
+                button.classList.remove("w-full", "py-3");
             }
         });
-    });
+    }
+
+    adjustTabsForScreenSize();
+    window.addEventListener("resize", adjustTabsForScreenSize);
 });
