@@ -4,32 +4,34 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================== */
     const darkModeToggle = document.getElementById("dark-mode-toggle");
 
-    if (darkModeToggle) {
-        // Check localStorage for dark mode setting
-        const isDarkMode = localStorage.getItem("darkMode") === "enabled";
-
-        if (isDarkMode) {
+    function applyDarkMode(isEnabled) {
+        if (isEnabled) {
             document.body.classList.add("dark-mode");
             darkModeToggle.textContent = "Light Mode";
+        } else {
+            document.body.classList.remove("dark-mode");
+            darkModeToggle.textContent = "Dark Mode";
         }
+    }
 
-        // Toggle dark mode and store preference
+    if (darkModeToggle) {
+        // Retrieve user preference from localStorage
+        const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+        applyDarkMode(isDarkMode);
+
         darkModeToggle.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
-            const mode = document.body.classList.contains("dark-mode") ? "enabled" : "disabled";
-            localStorage.setItem("darkMode", mode);
-            darkModeToggle.textContent = mode === "enabled" ? "Light Mode" : "Dark Mode";
+            const isEnabled = document.body.classList.toggle("dark-mode");
+            localStorage.setItem("darkMode", isEnabled ? "enabled" : "disabled");
+            applyDarkMode(isEnabled);
         });
     }
 
     /* =====================
-       TAB NAVIGATION FIX
+       TAB NAVIGATION (Improved)
     ===================== */
     function showTab(tabId) {
         // Hide all tab contents
-        document.querySelectorAll(".tab-content").forEach(tab => {
-            tab.style.display = "none";
-        });
+        document.querySelectorAll(".tab-content").forEach(tab => tab.style.display = "none");
 
         // Show the selected tab content
         const selectedTab = document.getElementById(tabId);
@@ -37,31 +39,30 @@ document.addEventListener("DOMContentLoaded", function () {
             selectedTab.style.display = "block";
         }
 
-        // Remove active class from all buttons
-        document.querySelectorAll(".tab-btn").forEach(btn => {
-            btn.classList.remove("active-tab");
-        });
-
-        // Add active class to clicked button
+        // Update active tab styling
+        document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active-tab"));
         const activeButton = document.querySelector(`[data-tab="${tabId}"]`);
         if (activeButton) {
             activeButton.classList.add("active-tab");
         }
+
+        // Save the last viewed tab in localStorage
+        localStorage.setItem("activeTab", tabId);
     }
 
-    // Event listeners for tab buttons
+    // Attach event listeners to tab buttons
     document.querySelectorAll(".tab-btn").forEach(button => {
         button.addEventListener("click", function () {
-            const tabId = this.dataset.tab;
-            showTab(tabId);
+            showTab(this.dataset.tab);
         });
     });
 
-    // Show the "About Me" tab by default on page load
-    showTab("about");
+    // Show the last viewed tab (or default to "about")
+    const lastViewedTab = localStorage.getItem("activeTab") || "about";
+    showTab(lastViewedTab);
 
     /* =====================
-       FORM VALIDATION
+       FORM VALIDATION (Enhanced)
     ===================== */
     const contactForm = document.querySelector("#contact-form");
 
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            // Fetch input fields
+            // Get input values
             let name = document.querySelector("#contact-name").value.trim();
             let email = document.querySelector("#contact-email").value.trim();
             let message = document.querySelector("#contact-message").value.trim();
@@ -93,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 isValid = false;
             }
 
-            // Validate email
+            // Validate email with regex
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
                 emailError.classList.remove("hidden");
@@ -110,17 +111,18 @@ document.addEventListener("DOMContentLoaded", function () {
             if (isValid) {
                 successMessage.classList.remove("hidden");
                 contactForm.reset();
+                setTimeout(() => successMessage.classList.add("hidden"), 3000);
             }
         });
     }
 
     /* =====================
-       SMOOTH SCROLLING
+       SMOOTH SCROLLING & ACTIVE SECTION HIGHLIGHTING
     ===================== */
     document.querySelectorAll("a[href^='#']").forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
-            
+
             const targetElement = document.querySelector(this.getAttribute("href"));
             if (!targetElement) return;
 
@@ -131,6 +133,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 top: targetPosition,
                 behavior: "smooth"
             });
+
+            // Highlight active section
+            document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active-tab"));
+            this.classList.add("active-tab");
         });
     });
 
@@ -152,5 +158,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     backToTop.addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    /* =====================
+       KEYBOARD NAVIGATION ACCESSIBILITY
+    ===================== */
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Tab") {
+            document.body.classList.add("user-is-tabbing");
+        }
+    });
+
+    document.addEventListener("mousedown", function () {
+        document.body.classList.remove("user-is-tabbing");
     });
 });
