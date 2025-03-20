@@ -1,35 +1,65 @@
-/* Import Google Fonts */
+/* ===================================
+   IMPORT GOOGLE FONTS
+=================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* Global Styles */
+/* ===================================
+   GLOBAL STYLES
+=================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Main body styling */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* Dark Mode */
+/* ===================================
+   DARK MODE STYLES
+=================================== */
 .dark-mode {
-    background-color: #1a202c;
-    color: #f4f4f4;
+    background-color: #1a202c; /* Dark background */
+    color: #f4f4f4; /* Light text */
 }
 
+/* Dark mode navbar */
 .dark-mode nav {
     background-color: #2d3748;
 }
 
-.dark-mode a {
+/* Dark mode buttons and links */
+.dark-mode a,
+.dark-mode button {
     color: #90cdf4;
 }
 
-/* Navigation */
+.dark-mode .tab-btn {
+    background: #2d3748;
+    color: white;
+}
+
+/* Dark mode hover effects */
+.dark-mode .tab-btn:hover {
+    background: #4299e1;
+}
+
+/* Dark mode input fields */
+.dark-mode input,
+.dark-mode textarea {
+    background: #2d3748;
+    color: white;
+    border: 1px solid #90cdf4;
+}
+
+/* ===================================
+   NAVIGATION BAR
+=================================== */
 nav {
     background: linear-gradient(135deg, #2b6cb0, #3182ce);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -42,20 +72,27 @@ nav {
     z-index: 100;
 }
 
+/* Logo & Title */
 nav h1 {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-nav a, nav button {
+/* Navigation links and buttons */
+nav a,
+nav button {
     transition: all 0.3s ease-in-out;
 }
 
-nav button:hover, nav a:hover {
+/* Hover effects */
+nav button:hover,
+nav a:hover {
     transform: scale(1.05);
 }
 
-/* Hero Section */
+/* ===================================
+   HERO SECTION
+=================================== */
 .hero-section {
     text-align: center;
     padding: 100px 20px;
@@ -65,16 +102,14 @@ nav button:hover, nav a:hover {
     border-bottom-right-radius: 50px;
 }
 
+/* Hero section title */
 .hero-section h1 {
     font-size: 3.5rem;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
 
-.hero-section h1:hover {
-    color: #ffffff;
-}
-
+/* Hero section subtitle */
 .hero-section h2 {
     font-size: 2rem;
     font-weight: 500;
@@ -82,19 +117,15 @@ nav button:hover, nav a:hover {
     transition: color 0.3s ease-in-out;
 }
 
+/* Hover effects */
+.hero-section h1:hover,
 .hero-section h2:hover {
     color: #ffffff;
 }
 
-.hero-section a {
-    transition: color 0.3s ease-in-out;
-}
-
-.hero-section a:hover {
-    color: #ffffff;
-}
-
-/* Tab Navigation */
+/* ===================================
+   TAB NAVIGATION
+=================================== */
 .tabs {
     display: flex;
     justify-content: center;
@@ -102,6 +133,7 @@ nav button:hover, nav a:hover {
     flex-wrap: wrap;
 }
 
+/* Tab buttons */
 .tab-btn {
     background: #e0e0e0;
     padding: 10px 20px;
@@ -114,13 +146,17 @@ nav button:hover, nav a:hover {
     font-weight: 600;
 }
 
-.tab-btn:hover, .active-tab {
+/* Active and hover states */
+.tab-btn:hover,
+.active-tab {
     background: #3182ce;
     color: white;
     transform: scale(1.05);
 }
 
-/* Tab Content */
+/* ===================================
+   TAB CONTENT
+=================================== */
 .tab-content {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
@@ -134,14 +170,18 @@ nav button:hover, nav a:hover {
     display: block;
 }
 
-/* About Section */
+/* ===================================
+   ABOUT SECTION
+=================================== */
 #about p {
     font-size: 1.2rem;
     line-height: 1.6;
     text-align: center;
 }
 
-/* Skills Section */
+/* ===================================
+   SKILLS SECTION
+=================================== */
 .skill-card {
     background: white;
     padding: 16px;
@@ -153,21 +193,15 @@ nav button:hover, nav a:hover {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Hover effects */
 .skill-card:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.skill-card p {
-    transition: color 0.3s ease-in-out;
-    font-weight: 600;
-}
-
-.skill-card p:hover {
-    color: #3182ce;
-}
-
-/* Experience Section */
+/* ===================================
+   EXPERIENCE SECTION
+=================================== */
 .experience-card {
     background: white;
     padding: 20px;
@@ -177,19 +211,14 @@ nav button:hover, nav a:hover {
     transition: transform 0.3s ease-in-out;
 }
 
+/* Hover effects */
 .experience-card:hover {
     transform: translateY(-5px);
 }
 
-.experience-card h3 {
-    transition: color 0.3s ease-in-out;
-}
-
-.experience-card h3:hover {
-    color: #3182ce;
-}
-
-/* Projects Section */
+/* ===================================
+   PROJECTS SECTION
+=================================== */
 .project-card {
     background: white;
     border-radius: 8px;
@@ -198,19 +227,14 @@ nav button:hover, nav a:hover {
     transition: transform 0.3s ease-in-out;
 }
 
+/* Hover effects */
 .project-card:hover {
     transform: scale(1.05);
 }
 
-.project-card li {
-    transition: color 0.3s ease-in-out;
-}
-
-.project-card li:hover {
-    color: #3182ce;
-}
-
-/* Contact Section */
+/* ===================================
+   CONTACT SECTION
+=================================== */
 .contact-section {
     background: linear-gradient(135deg, #2b6cb0, #4299e1);
     color: white;
@@ -218,26 +242,19 @@ nav button:hover, nav a:hover {
     padding: 60px 20px;
 }
 
-.contact-section a {
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
+/* Contact form fields */
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
-.contact-section a:hover {
-    color: #cbd5e0;
-}
-
-/* Buttons */
-button {
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
+/* ===================================
+   FOOTER
+=================================== */
 footer {
     background: #2c5282;
     color: white;
@@ -245,13 +262,23 @@ footer {
     padding: 20px;
 }
 
-/* Animations */
+/* ===================================
+   ANIMATIONS
+=================================== */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Responsive Design */
+/* ===================================
+   RESPONSIVE DESIGN
+=================================== */
 @media (max-width: 1024px) {
     .hero-section {
         padding: 60px 15px;
@@ -260,22 +287,8 @@ footer {
     .hero-section h1 {
         font-size: 2.8rem;
     }
-
-    .hero-section h2 {
-        font-size: 1.4rem;
-    }
-
-    .tabs {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 }
 
-/* Adjust layout for mobile screens */
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 2.2rem;
@@ -288,13 +301,5 @@ footer {
     .experience-card {
         flex-direction: column;
         text-align: center;
-    }
-
-    .skill-card, .project-card {
-        width: 100%;
-    }
-
-    .grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
 }
