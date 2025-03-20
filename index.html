@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI & Data Science Portfolio | Jean-Luc A. Saint-Fleur</title>
 
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="script.js"></script>
 
-    <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <style>
@@ -21,7 +19,6 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-    <!-- Navigation Bar -->
     <nav class="bg-blue-600 text-white py-4 fixed w-full shadow-lg z-50">
         <div class="container mx-auto flex justify-between items-center px-6">
             <h1 class="text-3xl font-bold">AI & Data Science Portfolio</h1>
@@ -29,190 +26,225 @@
                 <button id="dark-mode-toggle" class="dark-mode-toggle bg-gray-800 px-4 py-2 rounded-md">
                     Dark Mode
                 </button>
-                <a href="Data_Science_JeanLuc_SaintFleur.docx.pdf" download 
-                   class="ml-4 px-4 py-2 bg-gray-700 rounded-md text-white">
+                <a href="Data_Science_JeanLuc_SaintFleur.docx.pdf" download
+                    class="ml-4 px-4 py-2 bg-gray-700 rounded-md text-white">
                     Download Resume
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-section text-center pt-24 pb-10 bg-gradient-to-b from-blue-600 to-blue-800 text-white">
         <h1 class="text-5xl font-bold hover:text-gray-300 transition duration-300">Jean-Luc A. Saint-Fleur</h1>
         <h2 class="text-2xl font-semibold hover:text-gray-300 transition duration-300 mt-2">
             Senior Data Analyst | AI & Machine Learning Specialist
         </h2>
         <p class="text-lg mt-2">
-            New York, NY | 
+            New York, NY |
             <a href="mailto:skjantoine@gmail.com" class="hover:text-gray-300 transition duration-300">
                 skjantoine@gmail.com
             </a>
         </p>
         <div class="mt-4">
-            <a href="https://linkedin.com/in/jeanlucsaintfleur" target="_blank" 
-               class="px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-300">
+            <a href="https://linkedin.com/in/jeanlucsaintfleur" target="_blank"
+                class="px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-300">
                 LinkedIn
             </a>
-            <a href="https://github.com/jsaintfleur" target="_blank" 
-               class="ml-4 px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-300">
+            <a href="https://github.com/jsaintfleur" target="_blank"
+                class="ml-4 px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-300">
                 GitHub
             </a>
         </div>
     </section>
 
-    <!-- Tab Navigation -->
     <section class="container mx-auto text-center mt-10">
-        <div class="tabs flex justify-center space-x-4">
-            <button class="tab-btn active-tab" data-tab="about">About</button>
-            <button class="tab-btn" data-tab="skills">Skills</button>
-            <button class="tab-btn" data-tab="experience">Experience</button>
-            <button class="tab-btn" data-tab="projects">Projects</button>
-            <button class="tab-btn" data-tab="education">Education</button>
+        <div class="tabs flex justify-center space-x-4" role="tablist">
+            <button class="tab-btn active-tab" data-tab="about" role="tab" aria-controls="about" aria-selected="true">About</button>
+            <button class="tab-btn" data-tab="skills" role="tab" aria-controls="skills" aria-selected="false">Skills</button>
+            <button class="tab-btn" data-tab="experience" role="tab" aria-controls="experience" aria-selected="false">Experience</button>
+            <button class="tab-btn" data-tab="projects" role="tab" aria-controls="projects" aria-selected="false">Projects</button>
+            <button class="tab-btn" data-tab="education" role="tab" aria-controls="education" aria-selected="false">Education</button>
         </div>
     </section>
 
-    <!-- Tab Content Sections -->
     <section class="container mx-auto py-10 px-6">
-        
-    <!-- About Section -->
-    <div id="about" class="tab-content" style="display: block;">
-        <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">About Me</h2>
-        
-        <p class="text-lg text-gray-700 mt-4 text-center">
-            I am a **data-driven problem solver** with a passion for **AI, machine learning, and advanced analytics**. My work focuses on 
-            transforming **complex data into strategic insights**, helping organizations **optimize operations, enhance financial performance, and drive impactful decision-making**.
-        </p>
-    
-        <p class="text-lg text-gray-700 mt-4 text-center">
-            My career has taken me across **multiple industries**, from **hospitality and financial services** to the **nonprofit sector**, 
-            where I’ve led **data-driven initiatives to improve efficiency and maximize resource allocation**. I specialize in **predictive modeling, cloud-based AI solutions, and process automation**, ensuring that businesses can make **informed, forward-thinking decisions**.
-        </p>
-    
-        <p class="text-lg text-gray-700 mt-4 text-center">
-            I am fluent in **Haitian Creole 🇭🇹, French 🇫🇷, and English 🇺🇸**, and currently learning **Spanish 🇪🇸**. Just as I challenge myself to learn new languages, 
-            I approach **technology and data science** with the same enthusiasm—constantly expanding my skills in **Python, SQL, JavaScript, and AI-driven technologies**.
-        </p>
 
-        <p class="text-lg text-gray-700 mt-4 text-center">
-            Outside of work, I am passionate about **exploring cultures, music, and global cuisine**. I also have a deep love for **soccer ⚽**, having played competitively, and I believe that **teamwork and strategy in sports directly translate to success in data science and business**.
-        </p>
-    
-        <p class="text-lg text-gray-700 mt-4 text-center font-semibold">
-            My goal is to bridge the gap between **technical expertise and business strategy**, using data to drive **real-world impact and innovation**.  
-            Let's connect and build something extraordinary!
-        </p>
-    </div>
+        <div id="about" class="tab-content">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">About Me</h2>
 
-    </section>
+            <p class="text-lg text-gray-700 mt-4 text-center">
+                I am a **data-driven problem solver** with a passion for **AI, machine learning, and advanced analytics**. My work focuses on
+                transforming **complex data into strategic insights**, helping organizations **optimize operations, enhance financial performance, and drive impactful decision-making**.
+            </p>
 
+            <p class="text-lg text-gray-700 mt-4 text-center">
+                My career has taken me across **multiple industries**, from **hospitality and financial services** to the **nonprofit sector**,
+                where I’ve led **data-driven initiatives to improve efficiency and maximize resource allocation**. I specialize in **predictive modeling, cloud-based AI solutions, and process automation**, ensuring that businesses can make **informed, forward-thinking decisions**.
+            </p>
 
-<!-- Skills Section -->
-<div id="skills" class="tab-content">
-    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
-    
-    <h3 class="text-xl font-semibold mt-6 text-blue-600">Programming & Development</h3>
-    <ul class="list-disc ml-6 mt-2">
-        <li><strong>Programming:</strong> Python, SQL, R, JavaScript, Bash</li>
-        <li><strong>Data Manipulation:</strong> Pandas, NumPy, dplyr, Tidyverse</li>
-        <li><strong>Software Development & Version Control:</strong> Git, GitHub, GitLab, CI/CD Pipelines</li>
-        <li><strong>Web & API Development:</strong> Flask, FastAPI, REST APIs, GraphQL</li>
-    </ul>
+            <p class="text-lg text-gray-700 mt-4 text-center">
+                I am fluent in **Haitian Creole 🇭🇹, French 🇫🇷, and English 🇺🇸**, and currently learning **Spanish 🇪🇸**. Just as I challenge myself to learn new languages,
+                I approach **technology and data science** with the same enthusiasm—constantly expanding my skills in **Python, SQL, JavaScript, and AI-driven technologies**.
+            </p>
 
-    <h3 class="text-xl font-semibold mt-6 text-blue-600">Data Analytics & Business Intelligence</h3>
-    <ul class="list-disc ml-6 mt-2">
-        <li><strong>Data Visualization:</strong> Tableau, Power BI, Looker, Matplotlib, Seaborn, Plotly</li>
-        <li><strong>Business & Financial Analytics:</strong> Excel (Power Query, VBA, Pivot Tables), Google Sheets</li>
-        <li><strong>Statistical Analysis:</strong> Hypothesis Testing, A/B Testing, Regression Analysis, Bayesian Statistics</li>
-        <li><strong>Economic & Financial Modeling:</strong> Time Series Forecasting, Risk Analysis, Market Research, Monte Carlo Simulations</li>
-    </ul>
+            <p class="text-lg text-gray-700 mt-4 text-center">
+                Outside of work, I am passionate about **exploring cultures, music, and global cuisine**. I also have a deep love for **soccer ⚽**, having played competitively, and I believe that **teamwork and strategy in sports directly translate to success in data science and business**.
+            </p>
 
-    <h3 class="text-xl font-semibold mt-6 text-blue-600">Machine Learning & AI</h3>
-    <ul class="list-disc ml-6 mt-2">
-        <li><strong>Supervised & Unsupervised Learning:</strong> Scikit-Learn, XGBoost, LightGBM, Random Forest, SVM</li>
-        <li><strong>Deep Learning:</strong> TensorFlow, Keras, PyTorch, CNNs, RNNs, Transformers</li>
-        <li><strong>Natural Language Processing (NLP):</strong> spaCy, NLTK, Hugging Face, Sentiment Analysis, Text Classification</li>
-        <li><strong>Retrieval-Augmented Generation (RAG):</strong> LangChain, FAISS, Pinecone, ChromaDB, Semantic Search</li>
-        <li><strong>Time Series Forecasting:</strong> Prophet, ARIMA, LSTM, VAR</li>
-        <li><strong>Model Deployment & Optimization:</strong> MLflow, Docker, AWS SageMaker</li>
-    </ul>
+            <p class="text-lg text-gray-700 mt-4 text-center font-semibold">
+                My goal is to bridge the gap between **technical expertise and business strategy**, using data to drive **real-world impact and innovation**.
+                Let's connect and build something extraordinary!
+            </p>
+        </div>
 
-    <h3 class="text-xl font-semibold mt-6 text-blue-600">Big Data & Cloud Computing</h3>
-    <ul class="list-disc ml-6 mt-2">
-        <li><strong>Big Data Processing:</strong> Apache Spark, Hadoop, Dask, Databricks</li>
-        <li><strong>Cloud Platforms:</strong> AWS (S3, Lambda, EC2, Glue), GCP (BigQuery, Vertex AI), Azure</li>
-        <li><strong>Database Management:</strong> PostgreSQL, MySQL, Snowflake, Redshift, MongoDB</li>
-        <li><strong>ETL & Data Pipelines:</strong> Apache Airflow, dbt, Prefect</li>
-    </ul>
+        <div id="skills" class="tab-content">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
 
-    <h3 class="text-xl font-semibold mt-6 text-blue-600">Project Management & Collaboration</h3>
-    <ul class="list-disc ml-6 mt-2">
-        <li><strong>Agile & Scrum Methodologies:</strong> Jira, Trello, Asana</li>
-        <li><strong>Business Communication & Reporting:</strong> Google Suite (Docs, Sheets, Slides), Microsoft Office (Excel, PowerPoint, Word)</li>
-        <li><strong>Stakeholder Management:</strong> Presenting Data Insights, Communicating with Executives & Cross-Functional Teams</li>
-    </ul>
+            <h3 class="text-xl font-semibold mt-6 text-blue-600">Programming & Development</h3>
+            <ul class="list-disc ml-6 mt-2">
+                <li><strong>Programming:</strong> Python, SQL, R, JavaScript, Bash</li>
+                <li><strong>Data Manipulation:</strong> Pandas, NumPy, dplyr, Tidyverse</li>
+                <li><strong>Software Development & Version Control:</strong> Git, GitHub, GitLab, CI/CD Pipelines</li>
+                <li><strong>Web & API Development:</strong> Flask, FastAPI, REST APIs, GraphQL</li>
+            </ul>
 
-    <h3 class="text-xl font-semibold mt-6 text-blue-600">Spoken & Programming Languages</h3>
-    <ul class="list-disc ml-6 mt-2">
-        <li><strong>Spoken Languages:</strong> English (Fluent), French (Fluent), Haitian Creole (Fluent), Spanish (Learning)</li>
-        <li><strong>Programming Languages:</strong> Python, SQL, R, JavaScript</li>
-    </ul>
-</div>
+            <h3 class="text-xl font-semibold mt-6 text-blue-600">Data Analytics & Business Intelligence</h3>
+            <ul class="list-disc ml-6 mt-2">
+                <li><strong>Data Visualization:</strong> Tableau, Power BI, Looker, Matplotlib, Seaborn, Plotly</li>
+                <li><strong>Business & Financial Analytics:</strong> Excel (Power Query, VBA, Pivot Tables), Google Sheets</li>
+                <li><strong>Statistical Analysis:</strong> Hypothesis Testing, A/B Testing, Regression Analysis, Bayesian Statistics</li>
+                <li><strong>Economic & Financial Modeling:</strong> Time Series Forecasting, Risk Analysis, Market Research, Monte Carlo Simulations</li>
+            </ul>
 
+            <h3 class="text-xl font-semibold mt-6 text-blue-600">Machine Learning & AI</h3>
+            <ul class="list-disc ml-6 mt-2">
+                <li><strong>Supervised & Unsupervised Learning:</strong> Scikit-Learn, XGBoost, LightGBM, Random Forest, SVM</li>
+                <li><strong>Deep Learning:</strong> TensorFlow, Keras, PyTorch, CNNs, RNNs, Transformers</li>
+                <li><strong>Natural Language Processing (NLP):</strong> spaCy, NLTK, Hugging Face, Sentiment Analysis, Text Classification</li>
+                <li><strong>Retrieval-Augmented Generation (RAG):</strong> , ChromaDB, Semantic Search</li>
+                <li><strong>Time Series Forecasting:</strong> Prophet, ARIMA, LSTM, VAR</li>
+                <li><strong>Model Deployment & Optimization:</strong> MLflow, Docker, AWS SageMaker</li>
+            </ul>
 
-<!-- Education Section -->
-<div id="education" class="tab-content">
-    <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Education</h2>
-    
-    <!-- Master’s Degree -->
-    <div class="mt-6">
-        <h3 class="text-xl font-semibold text-blue-600">Master of Science in Business Administration (Economic Analysis)</h3>
-        <p class="text-gray-700">Murray Koppelman School of Business, Brooklyn College</p>
-        <p class="text-sm text-gray-600">Focused on economic modeling, data-driven decision-making, and financial analytics.</p>
-        <ul class="list-disc ml-6 mt-2 text-gray-700">
-            <li>Advanced Econometrics & Time Series Forecasting</li>
-            <li>Risk Analysis, Market Research, and Financial Modeling</li>
-            <li>Big Data & AI Applications in Business Strategy</li>
-        </ul>
-    </div>
+            <h3 class="text-xl font-semibold mt-6 text-blue-600">Big Data & Cloud Computing</h3>
+            <ul class="list-disc ml-6 mt-2">
+                <li><strong>Big Data Processing:</strong> Apache Spark, Hadoop, Dask, Databricks</li>
+                <li><strong>Cloud Platforms:</strong> AWS (S3, Lambda, EC2, Glue), GCP (BigQuery, Vertex AI), Azure</li>
+                <li><strong>Database Management:</strong> PostgreSQL, MySQL, Snowflake, Redshift, MongoDB</li>
+                <li><strong>ETL & Data Pipelines:</strong> Apache Airflow, dbt, Prefect</li>
+            </ul>
 
-    <!-- Bachelor’s Degree -->
-    <div class="mt-6">
-        <h3 class="text-xl font-semibold text-blue-600">Bachelor of Arts in Economics</h3>
-        <p class="text-gray-700">Brooklyn College</p>
-        <p class="text-sm text-gray-600">Gained expertise in statistical modeling, data interpretation, and economic policy analysis.</p>
-        <ul class="list-disc ml-6 mt-2 text-gray-700">
-            <li>Applied Statistics & Regression Analysis</li>
-            <li>Game Theory & Decision Science</li>
-            <li>Data Analytics for Public Policy</li>
-        </ul>
-    </div>
+            <h3 class="text-xl font-semibold mt-6 text-blue-600">Project Management & Collaboration</h3>
+            <ul class="list-disc ml-6 mt-2">
+                <li><strong>Agile & Scrum Methodologies:</strong> Jira, Trello, Asana</li>
+                <li><strong>Business Communication & Reporting:</strong> Google Suite (Docs, Sheets, Slides), Microsoft Office (Excel, PowerPoint, Word)</li>
+                <li><strong>Stakeholder Management:</strong> Presenting Data Insights, Communicating with Executives & Cross-Functional Teams</li>
+            </ul>
 
-    <!-- AI Bootcamp -->
-    <div class="mt-6">
-        <h3 class="text-xl font-semibold text-blue-600">Artificial Intelligence Engineering Bootcamp</h3>
-        <p class="text-gray-700">Columbia University</p>
-        <p class="text-sm text-gray-600">Specialized in AI, deep learning, and machine learning applications.</p>
-        <ul class="list-disc ml-6 mt-2 text-gray-700">
-            <li>Supervised & Unsupervised Learning Techniques</li>
-            <li>Neural Networks & Transformer-Based Architectures</li>
-            <li>Ethical AI & Model Interpretability</li>
-        </ul>
-    </div>
+            <h3 class="text-xl font-semibold mt-6 text-blue-600">Spoken & Programming Languages</h3>
+            <ul class="list-disc ml-6 mt-2">
+                <li><strong>Spoken Languages:</strong> English (Fluent), French (Fluent), Haitian Creole (Fluent), Spanish (Learning)</li>
+                <li><strong>Programming Languages:</strong> Python, SQL, R, JavaScript</li>
+            </ul>
+        </div>
 
-    <!-- Data Analytics Bootcamp -->
-    <div class="mt-6">
-        <h3 class="text-xl font-semibold text-blue-600">Data Analytics Immersive Bootcamp</h3>
-        <p class="text-gray-700">General Assembly</p>
-        <p class="text-sm text-gray-600">Hands-on experience in data analytics, visualization, and business intelligence.</p>
-        <ul class="list-disc ml-6 mt-2 text-gray-700">
-            <li>Python, SQL, and Data Wrangling Techniques</li>
-            <li>Exploratory Data Analysis (EDA) & Visualization</li>
-            <li>Building Dashboards with Tableau & Power BI</li>
-        </ul>
-    </div>
-</div>
+        <div id="education" class="tab-content">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Education</h2>
 
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-blue-600">Master of Science in Business Administration (Economic Analysis)</h3>
+                <p class="text-gray-700">Murray Koppelman School of Business, Brooklyn College</p>
+                <p class="text-sm text-gray-600">Focused on economic modeling, data-driven decision-making, and financial analytics.</p>
+                <ul class="list-disc ml-6 mt-2 text-gray-700">
+                    <li>Advanced Econometrics & Time Series Forecasting</li>
+                    <li>Risk Analysis, Market Research, and Financial Modeling</li>
+                    <li>Big Data & AI Applications in Business Strategy</li>
+                </ul>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-blue-600">Bachelor of Arts in Economics</h3>
+                <p class="text-gray-700">Brooklyn College</p>
+                <p class="text-sm text-gray-600">Gained expertise in statistical modeling, data interpretation, and economic policy analysis.</p>
+                <ul class="list-disc ml-6 mt-2 text-gray-700">
+                    <li>Applied Statistics & Regression Analysis</li>
+                    <li>Game Theory & Decision Science</li>
+                    <li>Data Analytics for Public Policy</li>
+                </ul>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-blue-600">Artificial Intelligence Engineering Bootcamp</h3>
+                <p class="text-gray-700">Columbia University</p>
+                <p class="text-sm text-gray-600">Specialized in AI, deep learning, and machine learning applications.</p>
+                <ul class="list-disc ml-6 mt-2 text-gray-700">
+                    <li>Supervised & Unsupervised Learning Techniques</li>
+                    <li>Neural Networks & Transformer-Based Architectures</li>
+                    <li>Ethical AI & Model Interpretability</li>
+                </ul>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-blue-600">Data Analytics Immersive Bootcamp</h3>
+                <p class="text-gray-700">General Assembly</p>
+                <p class="text-sm text-gray-600">Hands-on experience in data analytics, visualization, and business intelligence.</p>
+                <ul class="list-disc ml-6 mt-2 text-gray-700">
+                    <li>Python, SQL, and Data Wrangling Techniques</li>
+                    <li>Exploratory Data Analysis (EDA) & Visualization</li>
+                    <li>Building Dashboards with Tableau & Power BI</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="experience" class="tab-content">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Experience</h2>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-blue-600">Senior Data Analyst</h3>
+                <p class="text-gray-700">Company Name</p>
+                <p class="text-sm text-gray-600">Dates of Employment</p>
+                <ul class="list-disc ml-6 mt-2 text-gray-700">
+                    <li>Developed and implemented machine learning models to improve business processes.</li>
+                    <li>Conducted in-depth data analysis to identify trends and insights.</li>
+                    <li>Created interactive dashboards to visualize key performance indicators.</li>
+                </ul>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-blue-600">Data Analyst</h3>
+                <p class="text-gray-700">Previous Company Name</p>
+                <p class="text-sm text-gray-600">Dates of Employment</p>
+                <ul class="list-disc ml-6 mt-2 text-gray-700">
+                    <li>Performed data cleaning and preprocessing to ensure data quality.</li>
+                    <li>Generated reports and presentations to communicate findings to stakeholders.</li>
+                    <li>Assisted in the development of data-driven strategies.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Projects</h2>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-blue-600">Project Title 1</h3>
+                <p class="text-gray-700">Description of the project and your role.</p>
+                <ul class="list-disc ml-6 mt-2 text-gray-700">
+                    <li>Technologies used: Python, TensorFlow, etc.</li>
+                    <li>Key achievements: Improved accuracy by X%, etc.</li>
+                    <li>Link to GitHub repository or live demo (if available).</li>
+                </ul>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold text-blue-600">Project Title 2</h3>
+                <p class="text-gray-700">Description of the project and your role.</p>
+                <ul class="list-disc ml-6 mt-2 text-gray-700">
+                    <li>Technologies used: SQL, Power BI, etc.</li>
+                    <li>Key achievements: Reduced processing time by Y%, etc.</li>
+                    <li>Link to GitHub repository or live demo (if available).</li>
+                </ul>
+            </div>
+        </div>
 
     </section>
 
