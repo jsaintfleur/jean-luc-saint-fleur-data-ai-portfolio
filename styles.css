@@ -1,16 +1,26 @@
 /* ============================
-   GENERAL STYLING
+   IMPORT GOOGLE FONTS
 ============================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ============================
+   GLOBAL STYLES
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
+    background-color: #f4f4f4;
+    color: #333;
     transition: background-color 0.3s, color 0.3s;
 }
 
-h1, h2, h3 {
-    font-weight: bold;
-}
-
 /* ============================
-   DARK MODE
+   DARK MODE STYLES
 ============================ */
 .dark-mode {
     background-color: #1a202c;
@@ -25,8 +35,80 @@ h1, h2, h3 {
     color: #90cdf4;
 }
 
-.dark-mode .contact-form {
-    background-color: #2d3748;
+.dark-mode .tab-content {
+    background-color: #2a2e35;
+}
+
+.dark-mode .input-field {
+    background-color: #3b4048;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark-mode .submit-btn {
+    background-color: #2563eb;
+}
+
+/* ============================
+   NAVIGATION BAR
+============================ */
+nav {
+    background: linear-gradient(135deg, #2b6cb0, #3182ce);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav button,
+nav a {
+    transition: all 0.3s ease-in-out;
+}
+
+nav button:hover,
+nav a:hover {
+    transform: scale(1.05);
+}
+
+/* ============================
+   HERO SECTION
+============================ */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #4299e1, #2b6cb0);
+    color: white;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.hero-section h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.hero-section a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hero-section a:hover {
+    color: #cbd5e0;
 }
 
 /* ============================
@@ -34,107 +116,219 @@ h1, h2, h3 {
 ============================ */
 .tabs {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .tab-btn {
     background: #e0e0e0;
-    padding: 12px 18px;
+    padding: 10px 20px;
     border-radius: 5px;
-    font-weight: 600;
-    transition: all 0.3s ease-in-out;
     cursor: pointer;
-    min-width: 120px;
+    transition: all 0.3s ease-in-out;
+    flex: 1;
     text-align: center;
+    min-width: 120px;
+    font-weight: 600;
 }
 
 .tab-btn:hover,
-.tab-btn:focus {
-    background: #2563eb;
-    color: white;
-    transform: scale(1.05);
-    outline: none;
-}
-
 .active-tab {
-    background: #2563eb !important;
+    background: #3182ce;
     color: white;
-    border-bottom: 3px solid #1e4bbb;
     transform: scale(1.05);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 640px) {
-    .tabs {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tab-btn {
-        width: 80%;
-        max-width: 300px;
-        padding: 14px;
-    }
 }
 
 /* ============================
-   CONTACT FORM
+   TAB CONTENT STYLING
 ============================ */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 20px;
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    padding: 30px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
 }
 
-.contact-form input,
-.contact-form textarea {
+.tab-content:first-child {
+    display: block;
+}
+
+/* ============================
+   ABOUT SECTION
+============================ */
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ============================
+   SKILLS SECTION
+============================ */
+.skill-card {
+    background: white;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card p {
+    transition: color 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+/* ============================
+   EXPERIENCE SECTION
+============================ */
+.experience-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ============================
+   PROJECTS SECTION
+============================ */
+.project-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+/* ============================
+   CONTACT SECTION
+============================ */
+.contact-section {
+    background: linear-gradient(135deg, #2b6cb0, #4299e1);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact-section a {
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-section a:hover {
+    color: #cbd5e0;
+}
+
+/* ============================
+   FORM STYLING
+============================ */
+.input-field {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    margin-top: 5px;
+    transition: border 0.3s ease-in-out;
 }
 
-.contact-form textarea {
-    height: 120px;
-    resize: none;
+.input-field:focus {
+    border: 1px solid #3182ce;
+    outline: none;
 }
 
-/* Improve Error Messages */
-.text-red-600 {
-    display: block;
-    font-size: 14px;
-    margin-top: 4px;
-}
-
-/* Success Message */
-.text-green-600 {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-/* Improve Submit Button */
 .submit-btn {
-    background: #2563eb;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 12px;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s, transform 0.2s;
+    padding: 10px;
+    font-size: 1rem;
 }
 
 .submit-btn:hover {
-    background: #1e4bbb;
+    transform: scale(1.05);
+}
+
+/* ============================
+   FOOTER STYLING
+============================ */
+footer {
+    background: #2c5282;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ============================
+   ANIMATIONS
+============================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+@media (max-width: 1024px) {
+    .hero-section {
+        padding: 60px 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .experience-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skill-card,
+    .project-card {
+        width: 100%;
+    }
 }
