@@ -13,7 +13,7 @@
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <!-- Smooth Scrolling -->
+    <!-- Smooth Scrolling & Tab Animation -->
     <style>
         html { scroll-behavior: smooth; }
         .tab-content { display: none; }
@@ -22,20 +22,27 @@
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-    <!-- Navigation Bar -->
+    <!-- ============================
+         NAVIGATION BAR
+    ============================ -->
     <nav class="bg-blue-600 text-white py-4 fixed w-full shadow-lg z-50">
         <div class="container mx-auto flex justify-between items-center px-6">
             <h1 class="text-xl font-bold">Jean-Luc A. Saint-Fleur</h1>
             <div>
-                <button onclick="toggleDarkMode()" class="dark-mode-toggle bg-gray-800 px-4 py-2 rounded-md">Dark Mode</button>
-                <a href="Data_Science_JeanLuc_SaintFleur.docx.pdf" download class="ml-4 px-4 py-2 bg-gray-700 rounded-md text-white">
+                <button id="dark-mode-toggle" class="dark-mode-toggle bg-gray-800 px-4 py-2 rounded-md">
+                    Dark Mode
+                </button>
+                <a href="Data_Science_JeanLuc_SaintFleur.docx.pdf" download 
+                   class="ml-4 px-4 py-2 bg-gray-700 rounded-md text-white">
                     Download Resume
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ============================
+         HERO SECTION
+    ============================ -->
     <section class="hero-section text-center pt-24 pb-10 bg-gradient-to-b from-blue-600 to-blue-800 text-white">
         <h1 class="text-5xl font-bold hover:text-gray-300 transition duration-300">Jean-Luc A. Saint-Fleur</h1>
         <h2 class="text-2xl font-semibold hover:text-gray-300 transition duration-300 mt-2">
@@ -43,26 +50,38 @@
         </h2>
         <p class="text-lg mt-2">
             New York, NY | 
-            <a href="mailto:skjantoine@gmail.com" class="hover:text-gray-300 transition duration-300">skjantoine@gmail.com</a>
+            <a href="mailto:skjantoine@gmail.com" class="hover:text-gray-300 transition duration-300">
+                skjantoine@gmail.com
+            </a>
         </p>
         <div class="mt-4">
-            <a href="https://linkedin.com/in/jeanlucsaintfleur" target="_blank" class="px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-300">LinkedIn</a>
-            <a href="https://github.com/jsaintfleur" target="_blank" class="ml-4 px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-300">GitHub</a>
+            <a href="https://linkedin.com/in/jeanlucsaintfleur" target="_blank" 
+               class="px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-300">
+                LinkedIn
+            </a>
+            <a href="https://github.com/jsaintfleur" target="_blank" 
+               class="ml-4 px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-300">
+                GitHub
+            </a>
         </div>
     </section>
 
-    <!-- Tab Navigation -->
+    <!-- ============================
+         TAB NAVIGATION
+    ============================ -->
     <section class="container mx-auto text-center mt-10">
         <div class="tabs flex justify-center space-x-4">
-            <button class="tab-btn active-tab" onclick="showTab('about')">About</button>
-            <button class="tab-btn" onclick="showTab('skills')">Skills</button>
-            <button class="tab-btn" onclick="showTab('experience')">Experience</button>
-            <button class="tab-btn" onclick="showTab('projects')">Projects</button>
-            <button class="tab-btn" onclick="showTab('contact')">Contact</button>
+            <button class="tab-btn active-tab" data-tab="about">About</button>
+            <button class="tab-btn" data-tab="skills">Skills</button>
+            <button class="tab-btn" data-tab="experience">Experience</button>
+            <button class="tab-btn" data-tab="projects">Projects</button>
+            <button class="tab-btn" data-tab="contact">Contact</button>
         </div>
     </section>
 
-    <!-- Tab Content Sections -->
+    <!-- ============================
+         TAB CONTENT SECTIONS
+    ============================ -->
     <section class="container mx-auto py-10 px-6">
         
         <!-- About Section -->
@@ -79,7 +98,7 @@
         <div id="skills" class="tab-content">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Technical Skills & Technologies</h2>
             <ul class="list-disc ml-6 mt-4">
-                <li>Programming: Python, SQL, R, Bash</li>
+                <li>Programming: Python, Javascript, SQL, R, Bash</li>
                 <li>Machine Learning: Scikit-Learn, TensorFlow, Keras</li>
                 <li>Data Visualization: Tableau, Power BI, Matplotlib, Seaborn</li>
                 <li>Big Data: Apache Spark, Hadoop, Databricks</li>
@@ -89,60 +108,52 @@
             </ul>
         </div>
 
-        <!-- Experience Section -->
-        <div id="experience" class="tab-content">
-            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Professional Experience</h2>
-            <h3 class="text-xl font-semibold mt-4">Senior Community Development Officer | LISC NY</h3>
-            <p class="text-gray-600">July 2024 – Present</p>
-            <ul class="list-disc ml-6 mt-2">
-                <li>Developed AI-driven financial models for risk assessment.</li>
-                <li>Optimized funding allocation using predictive analytics.</li>
-                <li>Led data analysis for high-impact community projects.</li>
-            </ul>
-        </div>
-
-        <!-- Projects Section -->
-        <div id="projects" class="tab-content">
-            <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Projects</h2>
-            <ul class="list-disc ml-6 mt-4">
-                <li>AI Earnings Call Analyzer (Natural Language Processing, Sentiment Analysis)</li>
-                <li>HR Attrition Prediction (Machine Learning, Classification Models)</li>
-                <li>Big Data Wind Turbine Market Analysis (Apache Spark, Databricks)</li>
-            </ul>
-        </div>
-
         <!-- Contact Section -->
         <div id="contact" class="tab-content">
             <h2 class="text-2xl font-bold border-b-4 border-blue-600 pb-2 text-center">Contact Me</h2>
-            <form class="mt-6">
-                <input type="text" placeholder="Your Name" class="input-field">
-                <input type="email" placeholder="Your Email" class="input-field">
-                <textarea placeholder="Your Message" class="input-field"></textarea>
+            <form class="contact-form mt-6">
+                <input type="text" id="contact-name" placeholder="Your Name" class="input-field">
+                <input type="email" id="contact-email" placeholder="Your Email" class="input-field">
+                <textarea id="contact-message" placeholder="Your Message" class="input-field"></textarea>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
 
     </section>
 
-    <!-- Footer -->
+    <!-- ============================
+         FOOTER
+    ============================ -->
     <footer class="bg-blue-600 text-white text-center py-6 mt-10">
         <p>© 2024 Jean-Luc A. Saint-Fleur</p>
     </footer>
 
+    <!-- ============================
+         JAVASCRIPT: TAB SWITCHING & DARK MODE
+    ============================ -->
     <script>
-        function showTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.style.display = tab.id === tabId ? "block" : "none";
+        document.addEventListener("DOMContentLoaded", function () {
+            // Tab Navigation Logic
+            function showTab(tabId) {
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.style.display = tab.id === tabId ? "block" : "none";
+                });
+
+                document.querySelectorAll('.tab-btn').forEach(button => {
+                    button.classList.remove("active-tab");
+                });
+
+                document.querySelector(`[data-tab="${tabId}"]`).classList.add("active-tab");
+            }
+
+            document.querySelectorAll(".tab-btn").forEach(button => {
+                button.addEventListener("click", function () {
+                    showTab(this.dataset.tab);
+                });
             });
 
-            document.querySelectorAll('.tab-btn').forEach(button => {
-                button.classList.remove("active-tab");
-            });
-
-            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add("active-tab");
-        }
-
-        showTab("about");
+            showTab("about"); // Default active tab
+        });
     </script>
 
 </body>
