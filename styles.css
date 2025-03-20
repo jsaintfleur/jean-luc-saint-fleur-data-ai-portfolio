@@ -1,305 +1,140 @@
-/* ===================================
-   IMPORT GOOGLE FONTS
-=================================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-/* ===================================
-   GLOBAL STYLES
-=================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Main body styling */
+/* ============================
+   GENERAL STYLING
+============================ */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* ===================================
-   DARK MODE STYLES
-=================================== */
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+/* ============================
+   DARK MODE
+============================ */
 .dark-mode {
-    background-color: #1a202c; /* Dark background */
-    color: #f4f4f4; /* Light text */
+    background-color: #1a202c;
+    color: #f4f4f4;
 }
 
-/* Dark mode navbar */
 .dark-mode nav {
     background-color: #2d3748;
 }
 
-/* Dark mode buttons and links */
-.dark-mode a,
-.dark-mode button {
+.dark-mode a {
     color: #90cdf4;
 }
 
-.dark-mode .tab-btn {
-    background: #2d3748;
-    color: white;
+.dark-mode .contact-form {
+    background-color: #2d3748;
 }
 
-/* Dark mode hover effects */
-.dark-mode .tab-btn:hover {
-    background: #4299e1;
-}
-
-/* Dark mode input fields */
-.dark-mode input,
-.dark-mode textarea {
-    background: #2d3748;
-    color: white;
-    border: 1px solid #90cdf4;
-}
-
-/* ===================================
-   NAVIGATION BAR
-=================================== */
-nav {
-    background: linear-gradient(135deg, #2b6cb0, #3182ce);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-}
-
-/* Logo & Title */
-nav h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-/* Navigation links and buttons */
-nav a,
-nav button {
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hover effects */
-nav button:hover,
-nav a:hover {
-    transform: scale(1.05);
-}
-
-/* ===================================
-   HERO SECTION
-=================================== */
-.hero-section {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #4299e1, #2b6cb0);
-    color: white;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-}
-
-/* Hero section title */
-.hero-section h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
-
-/* Hero section subtitle */
-.hero-section h2 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-top: 10px;
-    transition: color 0.3s ease-in-out;
-}
-
-/* Hover effects */
-.hero-section h1:hover,
-.hero-section h2:hover {
-    color: #ffffff;
-}
-
-/* ===================================
+/* ============================
    TAB NAVIGATION
-=================================== */
+============================ */
 .tabs {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-/* Tab buttons */
 .tab-btn {
     background: #e0e0e0;
-    padding: 10px 20px;
+    padding: 12px 18px;
     border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    flex: 1;
-    text-align: center;
-    min-width: 120px;
     font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    min-width: 120px;
+    text-align: center;
 }
 
-/* Active and hover states */
 .tab-btn:hover,
-.active-tab {
-    background: #3182ce;
+.tab-btn:focus {
+    background: #2563eb;
     color: white;
+    transform: scale(1.05);
+    outline: none;
+}
+
+.active-tab {
+    background: #2563eb !important;
+    color: white;
+    border-bottom: 3px solid #1e4bbb;
     transform: scale(1.05);
 }
 
-/* ===================================
-   TAB CONTENT
-=================================== */
-.tab-content {
-    display: none;
-    animation: fadeIn 0.5s ease-in-out;
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-btn {
+        width: 80%;
+        max-width: 300px;
+        padding: 14px;
+    }
 }
 
-.tab-content:first-child {
-    display: block;
-}
-
-/* ===================================
-   ABOUT SECTION
-=================================== */
-#about p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    text-align: center;
-}
-
-/* ===================================
-   SKILLS SECTION
-=================================== */
-.skill-card {
-    background: white;
-    padding: 16px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+/* ============================
+   CONTACT FORM
+============================ */
+.contact-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Hover effects */
-.skill-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* ===================================
-   EXPERIENCE SECTION
-=================================== */
-.experience-card {
-    background: white;
+    gap: 12px;
     padding: 20px;
+    background: white;
     border-radius: 10px;
-    display: flex;
-    gap: 20px;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Hover effects */
-.experience-card:hover {
-    transform: translateY(-5px);
-}
-
-/* ===================================
-   PROJECTS SECTION
-=================================== */
-.project-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Hover effects */
-.project-card:hover {
-    transform: scale(1.05);
-}
-
-/* ===================================
-   CONTACT SECTION
-=================================== */
-.contact-section {
-    background: linear-gradient(135deg, #2b6cb0, #4299e1);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-/* Contact form fields */
-.contact-section input,
-.contact-section textarea {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
 
-/* ===================================
-   FOOTER
-=================================== */
-footer {
-    background: #2c5282;
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Improve Error Messages */
+.text-red-600 {
+    display: block;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* Success Message */
+.text-green-600 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Improve Submit Button */
+.submit-btn {
+    background: #2563eb;
     color: white;
-    text-align: center;
-    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
-/* ===================================
-   ANIMATIONS
-=================================== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===================================
-   RESPONSIVE DESIGN
-=================================== */
-@media (max-width: 1024px) {
-    .hero-section {
-        padding: 60px 15px;
-    }
-
-    .hero-section h1 {
-        font-size: 2.8rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-section h2 {
-        font-size: 1.2rem;
-    }
-
-    .experience-card {
-        flex-direction: column;
-        text-align: center;
-    }
+.submit-btn:hover {
+    background: #1e4bbb;
 }
