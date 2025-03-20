@@ -8,7 +8,7 @@
 ## 🛠 Technical Skills & Technologies  
 
 ### **Programming Languages**  
-- Python, SQL, R, Bash  
+- Python, JavaScript, SQL, R, Bash  
 
 ### **Data Visualization**  
 - Tableau, Microsoft Power BI, Matplotlib, Seaborn, Plotly  
@@ -63,8 +63,8 @@
 - Skills: Python, SQL, Tableau, Data Visualization, Data Engineering  
 
 ### **Murray Koppelman School of Business**  
-- **Master of Science in Business Administration (Economic Analysis) | August 2018**  
-- **Bachelor of Arts in Economics | May 2017**  
+- **Master of Science in Business Administration (Economic Analysis)**  
+- **Bachelor of Arts in Economics**  
 
 ---
 
@@ -91,20 +91,44 @@
 ## 💼 Professional Experience  
 
 ### **Local Initiatives Support Corporation (LISC NY)** – New York, NY  
-**Senior Community Development Officer | Data & Financial Analyst** | **July 2024 – Present**  
+**Senior Community Development Officer | Data & Financial Analyst**  
 
-- **Managed and allocated** **$6.98M+** in **HUD Section 4** and **AmeriCorps funding**, directing resources to **Community Development Financial Institutions (CDFIs)** and **Community-Based Organizations (CBOs)** while ensuring compliance.  
-- **Developed automated financial tracking tools** in **Python, SQL, and Excel**, reducing **fund reconciliation time by 50%** and improving grant expenditure forecasting accuracy.  
-- **Led data-driven analysis** for the **NYCHA PACT program**, evaluating **funding allocations, project timelines, and performance metrics**, improving execution efficiency by **20%**.  
-- **Implemented AI and predictive analytics** for **LISC NY’s grant strategy**, developing risk assessment models and funding impact projections for executive decision-making.  
-- **Led ERP training workshops** for finance teams, **upskilling 30+ staff** in **grant accounting, budget forecasting, and fund tracking** using **Financial Edge and Salesforce**.  
-- **Prepared and presented financial reports** to **LISC’s executive leadership, major funders, and public sector partners**, influencing key funding decisions in **affordable housing and economic mobility**.  
+- **Managed multimillion-dollar HUD Section 4 and AmeriCorps funding**, directing resources to **Community Development Financial Institutions (CDFIs)** and **Community-Based Organizations (CBOs)** while ensuring compliance with federal, state, and local regulations.  
+- **Optimized financial tracking systems** by developing **automated dashboards** and **reporting tools** in **Python, SQL, and Excel**, reducing **fund reconciliation time by 50%** and improving **grant expenditure forecasting accuracy**.  
+- **Led data-driven analysis** for the **NYCHA PACT (Permanent Affordability Commitment Together) program**, enhancing funding allocations, project tracking, and performance metrics, improving efficiency by **20%**.  
+- **Developed an AI strategy** for **LISC NY**, creating predictive analytics models for **grant allocation, risk assessment**, and **community investment impact**, optimizing fund distribution.  
+- **Designed & deployed financial data analytics frameworks**, integrating ERP systems, financial models, and KPI dashboards to improve **fund utilization tracking and reporting** across **affordable housing and community development programs**.  
+- **Enhanced operational efficiency** by **automating financial data analysis**, reducing **manual effort by 30%**, and improving the **accuracy of forecasting grant expenditures**.  
+- **Prepared and presented financial and analytics reports** to **executive leadership, major funders, and public sector partners**, influencing key investment decisions in **economic mobility and housing preservation**.  
+
+---
 
 ### **The Doe Fund, Inc.** – New York, NY  
-**Director of Business Operations** | **December 2017 – July 2024**  
-- Analyzed business data, increasing **cost-effectiveness by 35%** and streamlining resource allocation.  
-- Managed **$6M+ in client contracts**, ensuring **100% client retention** and **efficient fund allocation**.  
-- Led financial process automation, reducing tech-related costs by **25%**.  
+**Director of Business Operations**  
+
+- **Analyzed business data** to identify key trends, improving **cost-effectiveness by 35%** and optimizing **resource allocation strategies**.  
+- **Led financial process automation**, reducing technology-related costs by **25%** while enhancing **financial tracking and reporting**.  
+- **Managed and analyzed client contracts worth over $6M annually**, ensuring **efficient fund allocation** and achieving a **100% client retention rate**.  
+- **Implemented operational efficiencies** that streamlined contract workflows, improving **compliance tracking and audit readiness**.  
+
+---
+
+### **General Assembly** – New York, NY  
+**Data Analytics Apprentice**  
+
+- **Conducted statistical analyses** using **Python, SQL, and Tableau**, extracting insights from large datasets and presenting findings to **senior management**.  
+- **Developed machine learning models** for **predictive analytics**, improving decision-making and business intelligence applications.  
+- **Automated data processing pipelines** with **Python and PostgreSQL**, optimizing performance and ensuring data accuracy.  
+- **Utilized Agile methodologies** to manage projects, prioritize tasks, and deliver **data-driven insights to cross-functional teams**.  
+
+---
+
+### **SP+ | New York Marriott Marquis Account** – New York, NY  
+**Guest Service Manager**  
+
+- **Implemented workforce optimization strategies**, improving **employee efficiency by 30%** and reducing **guest wait times by 60%**.  
+- **Led financial reporting & payroll management**, utilizing **Excel-based analysis** to reduce **payment processing times by 50%**.  
+- **Developed data-driven guest service models**, increasing **customer satisfaction by 5%** and improving **employee performance by 10%** through better training and process improvements.  
 
 ---
 
