@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================
        DARK MODE TOGGLE
     ===================== */
-    const toggleButton = document.querySelector(".dark-mode-toggle");
+    const toggleButton = document.getElementById("dark-mode-toggle");
     
     if (toggleButton) {
         // Check localStorage for dark mode setting
@@ -44,30 +44,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /* =====================
-       TAB NAVIGATION WITH ANIMATIONS
+       TAB NAVIGATION FIXED
     ===================== */
     function showTab(tabId) {
-        const activeTab = document.querySelector(".tab-content:not(.hidden)");
-        const newTab = document.getElementById(tabId);
+        const allTabs = document.querySelectorAll(".tab-content");
+        const activeTab = document.querySelector(`#${tabId}`);
 
-        if (!newTab || (activeTab && activeTab === newTab)) return;
+        // Hide all tabs
+        allTabs.forEach(tab => {
+            tab.classList.add("hidden");
+        });
 
-        // Hide current tab with fade-out effect
+        // Show selected tab
         if (activeTab) {
-            gsap.to(activeTab, { opacity: 0, y: 20, duration: 0.4, onComplete: () => activeTab.classList.add("hidden") });
+            activeTab.classList.remove("hidden");
         }
-
-        // Delay showing new tab for smooth transition
-        setTimeout(() => {
-            newTab.classList.remove("hidden");
-            gsap.fromTo(newTab, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 });
-        }, 400);
 
         // Update active tab button styling
         document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active-tab"));
         document.querySelector(`[data-tab="${tabId}"]`).classList.add("active-tab");
     }
 
+    // Attach event listeners to all tab buttons
     document.querySelectorAll(".tab-btn").forEach(button => {
         button.addEventListener("click", function () {
             showTab(this.dataset.tab);
@@ -82,14 +80,14 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================== */
     const backToTop = document.createElement("button");
     backToTop.innerText = "⬆ Top";
-    backToTop.classList.add("back-to-top");
+    backToTop.classList.add("back-to-top", "hidden");
     document.body.appendChild(backToTop);
 
     window.addEventListener("scroll", function () {
         if (window.scrollY > 500) {
-            backToTop.classList.add("visible");
+            backToTop.classList.remove("hidden");
         } else {
-            backToTop.classList.remove("visible");
+            backToTop.classList.add("hidden");
         }
     });
 
@@ -98,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /* =====================
-       HOVER EFFECTS WITH ANIMATIONS
+       HOVER EFFECTS FIXED
     ===================== */
     document.querySelectorAll(".skill-card, .experience-card, .project-card").forEach(card => {
         card.addEventListener("mouseover", function () {
@@ -112,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /* =====================
-       FORM VALIDATION & SUBMISSION
+       FORM VALIDATION & SUBMISSION FIXED
     ===================== */
     const contactForm = document.querySelector(".contact-form");
 
@@ -120,32 +118,38 @@ document.addEventListener("DOMContentLoaded", function () {
         contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            // Fetch input fields
-            let name = document.querySelector("#contact-name")?.value.trim() || "";
-            let email = document.querySelector("#contact-email")?.value.trim() || "";
-            let message = document.querySelector("#contact-message")?.value.trim() || "";
+            const name = document.getElementById("contact-name")?.value.trim();
+            const email = document.getElementById("contact-email")?.value.trim();
+            const subject = document.getElementById("contact-subject")?.value.trim();
+            const message = document.getElementById("contact-message")?.value.trim();
+            const successMessage = document.getElementById("form-success-message");
 
-            // Basic field validation
-            if (name === "" || email === "" || message === "") {
-                alert("Please fill in all fields.");
+            if (!name || !email || !message) {
+                alert("Please fill in all required fields.");
                 return;
             }
 
-            // Email format validation using regex
+            // Email format validation
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
-                alert("Please enter a valid email.");
+                alert("Please enter a valid email address.");
                 return;
             }
 
-            // Successful form submission
-            alert("Message Sent Successfully!");
+            // Show success message and reset form
+            if (successMessage) {
+                successMessage.classList.remove("hidden");
+                setTimeout(() => {
+                    successMessage.classList.add("hidden");
+                }, 4000);
+            }
+
             contactForm.reset();
         });
     }
 
     /* =====================
-       IMAGE LAZY LOADING
+       IMAGE LAZY LOADING FIXED
     ===================== */
     const lazyImages = document.querySelectorAll("img.lazy-load");
 
