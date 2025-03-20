@@ -2,69 +2,125 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================
        DARK MODE TOGGLE
     ===================== */
-    const toggleButton = document.querySelector("#dark-mode-toggle");
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
 
-    if (toggleButton) {
+    if (darkModeToggle) {
         // Check localStorage for dark mode setting
         const isDarkMode = localStorage.getItem("darkMode") === "enabled";
 
         if (isDarkMode) {
             document.body.classList.add("dark-mode");
-            toggleButton.textContent = "Light Mode";
+            darkModeToggle.textContent = "Light Mode";
         }
 
         // Toggle dark mode and store preference
-        toggleButton.addEventListener("click", function () {
+        darkModeToggle.addEventListener("click", function () {
             document.body.classList.toggle("dark-mode");
             const mode = document.body.classList.contains("dark-mode") ? "enabled" : "disabled";
             localStorage.setItem("darkMode", mode);
-            toggleButton.textContent = mode === "enabled" ? "Light Mode" : "Dark Mode";
+            darkModeToggle.textContent = mode === "enabled" ? "Light Mode" : "Dark Mode";
         });
     }
 
     /* =====================
-       TAB NAVIGATION FUNCTION
+       TAB NAVIGATION FIX
     ===================== */
     function showTab(tabId) {
-        const activeTab = document.querySelector(".tab-content:not(.hidden)");
-        const newTab = document.getElementById(tabId);
+        // Hide all tab contents
+        document.querySelectorAll(".tab-content").forEach(tab => {
+            tab.style.display = "none";
+        });
 
-        if (!newTab || (activeTab && activeTab === newTab)) return;
-
-        // Hide current tab smoothly
-        if (activeTab) {
-            activeTab.classList.add("opacity-0");
-            setTimeout(() => activeTab.classList.add("hidden"), 300);
+        // Show the selected tab content
+        const selectedTab = document.getElementById(tabId);
+        if (selectedTab) {
+            selectedTab.style.display = "block";
         }
 
-        // Show new tab with animation
-        setTimeout(() => {
-            newTab.classList.remove("hidden", "opacity-0");
-            newTab.classList.add("opacity-100");
-        }, 300);
+        // Remove active class from all buttons
+        document.querySelectorAll(".tab-btn").forEach(btn => {
+            btn.classList.remove("active-tab");
+        });
 
-        // Update active tab button styling
-        document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active-tab"));
-        document.querySelector(`[data-tab="${tabId}"]`).classList.add("active-tab");
+        // Add active class to clicked button
+        const activeButton = document.querySelector(`[data-tab="${tabId}"]`);
+        if (activeButton) {
+            activeButton.classList.add("active-tab");
+        }
     }
 
-    // Attach event listeners to all tab buttons
+    // Event listeners for tab buttons
     document.querySelectorAll(".tab-btn").forEach(button => {
         button.addEventListener("click", function () {
-            showTab(this.dataset.tab);
+            const tabId = this.dataset.tab;
+            showTab(tabId);
         });
     });
 
-    // Set default tab on page load
+    // Show the "About Me" tab by default on page load
     showTab("about");
 
     /* =====================
-       SMOOTH SCROLLING FOR INTERNAL LINKS
+       FORM VALIDATION
+    ===================== */
+    const contactForm = document.querySelector("#contact-form");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Fetch input fields
+            let name = document.querySelector("#contact-name").value.trim();
+            let email = document.querySelector("#contact-email").value.trim();
+            let message = document.querySelector("#contact-message").value.trim();
+
+            // Error message elements
+            let nameError = document.querySelector("#name-error");
+            let emailError = document.querySelector("#email-error");
+            let messageError = document.querySelector("#message-error");
+            let successMessage = document.querySelector("#form-success-message");
+
+            // Reset errors
+            nameError.classList.add("hidden");
+            emailError.classList.add("hidden");
+            messageError.classList.add("hidden");
+
+            let isValid = true;
+
+            // Validate name
+            if (!name) {
+                nameError.classList.remove("hidden");
+                isValid = false;
+            }
+
+            // Validate email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                emailError.classList.remove("hidden");
+                isValid = false;
+            }
+
+            // Validate message
+            if (!message) {
+                messageError.classList.remove("hidden");
+                isValid = false;
+            }
+
+            // If all fields are valid, show success message
+            if (isValid) {
+                successMessage.classList.remove("hidden");
+                contactForm.reset();
+            }
+        });
+    }
+
+    /* =====================
+       SMOOTH SCROLLING
     ===================== */
     document.querySelectorAll("a[href^='#']").forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
-
+            
             const targetElement = document.querySelector(this.getAttribute("href"));
             if (!targetElement) return;
 
@@ -83,85 +139,18 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================== */
     const backToTop = document.createElement("button");
     backToTop.innerText = "⬆ Top";
-    backToTop.classList.add("back-to-top", "hidden");
+    backToTop.classList.add("back-to-top");
     document.body.appendChild(backToTop);
 
     window.addEventListener("scroll", function () {
         if (window.scrollY > 500) {
-            backToTop.classList.remove("hidden");
             backToTop.classList.add("visible");
         } else {
             backToTop.classList.remove("visible");
-            setTimeout(() => backToTop.classList.add("hidden"), 300);
         }
     });
 
     backToTop.addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
-
-    /* =====================
-       FORM VALIDATION & SUBMISSION
-    ===================== */
-    const contactForm = document.querySelector("#contact-form");
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            // Fetch input fields
-            let name = document.querySelector("#contact-name")?.value.trim() || "";
-            let email = document.querySelector("#contact-email")?.value.trim() || "";
-            let message = document.querySelector("#contact-message")?.value.trim() || "";
-            let successMessage = document.querySelector("#form-success-message");
-
-            // Basic field validation
-            let isValid = true;
-
-            if (!name) {
-                document.querySelector("#name-error").classList.remove("hidden");
-                isValid = false;
-            } else {
-                document.querySelector("#name-error").classList.add("hidden");
-            }
-
-            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                document.querySelector("#email-error").classList.remove("hidden");
-                isValid = false;
-            } else {
-                document.querySelector("#email-error").classList.add("hidden");
-            }
-
-            if (!message) {
-                document.querySelector("#message-error").classList.remove("hidden");
-                isValid = false;
-            } else {
-                document.querySelector("#message-error").classList.add("hidden");
-            }
-
-            // Successful form submission
-            if (isValid) {
-                successMessage.classList.remove("hidden");
-                contactForm.reset();
-                setTimeout(() => successMessage.classList.add("hidden"), 5000);
-            }
-        });
-    }
-
-    /* =====================
-       RESPONSIVE DESIGN ADJUSTMENTS
-    ===================== */
-    function adjustTabsForScreenSize() {
-        const isMobile = window.innerWidth < 768;
-        document.querySelectorAll(".tab-btn").forEach(button => {
-            if (isMobile) {
-                button.classList.add("w-full", "py-3");
-            } else {
-                button.classList.remove("w-full", "py-3");
-            }
-        });
-    }
-
-    adjustTabsForScreenSize();
-    window.addEventListener("resize", adjustTabsForScreenSize);
 });
